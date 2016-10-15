@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class TestBase {
 
-	private static Logger LOG = LoggerFactory.getLogger(TestBase.class);
+	private static final Logger LOG = LoggerFactory.getLogger(TestBase.class);
 
 	@Before
 	public void setUp() {

@@ -1,8 +1,13 @@
 package com.leveraon.csfoundmental.datastructure.arrays;
 
-public class SoringArrayTest {
+import org.junit.Test;
 
-	public static void main(String[] args) {
+import com.leveraon.csfoundmental.datastructure.TestBase;
+
+public class SoringArrayTest extends TestBase {
+
+	@Test
+	public void testInsertAndSorting() {
 		char[] array = { 'A', 'B', 'D', 'F', 'C', 'H', 'G', 'E' };
 		System.out.println("Before sorting:");
 		printArray(array);

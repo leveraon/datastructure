@@ -1,0 +1,14 @@
+package com.leveraon.csfoundmental.datastructure.recursion;
+
+import org.junit.Test;
+
+import com.leveraon.csfoundmental.datastructure.TestBase;
+
+public class RecursionRulerTest extends TestBase {
+
+	@Test
+	public void testDrawRuler() {
+		int inches = 3, majorLength = 4;
+		RecursionRuler.drawRuler(inches, majorLength);
+	}
+}
