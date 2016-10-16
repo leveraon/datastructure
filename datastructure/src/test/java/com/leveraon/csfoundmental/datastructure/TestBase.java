@@ -19,4 +19,13 @@ public class TestBase {
 		LOG.info("-------------------------------end");
 	}
 
+	public <T> void printArray(T[] array) {
+		System.out.print("[");
+		for (T element : array) {
+			System.out.print(element);
+			System.out.print(",");
+		}
+		System.out.print("]");
+	}
+
 }
