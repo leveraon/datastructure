@@ -5,11 +5,11 @@
 
 	<groupId>com.leveraon.csfoundmental</groupId>
 	<artifactId>datastructure</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>datastructure</name>
-	<url>http://maven.apache.org</url>
+	<url>http://leveraon.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
