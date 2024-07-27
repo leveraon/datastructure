@@ -1,7 +1,7 @@
 package com.leveraon.csfoundmental.datastructure;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,12 +9,12 @@ public class TestBase {
 
 	private static final Logger LOG = LoggerFactory.getLogger(TestBase.class);
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		LOG.info("-------------------------------start");
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() {
 		LOG.info("-------------------------------end");
 	}

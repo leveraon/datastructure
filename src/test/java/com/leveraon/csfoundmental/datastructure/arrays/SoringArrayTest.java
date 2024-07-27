@@ -1,6 +1,6 @@
 package com.leveraon.csfoundmental.datastructure.arrays;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.leveraon.csfoundmental.datastructure.TestBase;
 

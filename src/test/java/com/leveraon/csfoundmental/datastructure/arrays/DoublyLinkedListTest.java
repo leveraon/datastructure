@@ -2,7 +2,7 @@ package com.leveraon.csfoundmental.datastructure.arrays;
 
 import java.util.Random;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.leveraon.csfoundmental.datastructure.TestBase;
 import com.leveraon.csfoundmental.datastructure.lists.DoublyLinkedList;
@@ -11,7 +11,7 @@ public class DoublyLinkedListTest extends TestBase {
 
 	@Test
 	public void testCreateDoublyLinkedList() {
-		Integer count = new Integer(10);
+		Integer count = 10;
 		DoublyLinkedList<Integer> linkedList = new DoublyLinkedList<Integer>();
 		Random rand = new Random(100);
 		for (int i = 1; i < count; i++) {
