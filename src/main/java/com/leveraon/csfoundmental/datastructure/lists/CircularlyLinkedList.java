@@ -1,17 +1,6 @@
 package com.leveraon.csfoundmental.datastructure.lists;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 public class CircularlyLinkedList<E> {
-	// ---------------- nested Node class ----------------
-	@Data
-	@AllArgsConstructor
-	private static class Node<E> {
-		private E element; // reference to the element stored at this node
-		private Node<E> next; // reference to the subsequent node in the list
-
-	} // ----------- end of nested Node class -----------
 
 	// instance variables of the CircularlyLinkedList
 	private Node<E> tail = null; // we store tail (but not head)

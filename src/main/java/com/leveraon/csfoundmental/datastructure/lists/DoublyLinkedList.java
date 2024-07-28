@@ -1,18 +1,6 @@
 package com.leveraon.csfoundmental.datastructure.lists;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 public class DoublyLinkedList<E> {
-	// ---------------- nested Node class ----------------
-	@Data
-	@AllArgsConstructor
-	private static class Node<E> {
-		private E element;
-		private Node<E> prev;
-		private Node<E> next;
-
-	} // ----------- end of nested Node class -----------
 
 	// instance variables of the DoublyLinkedList
 	private Node<E> header;

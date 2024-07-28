@@ -1,15 +1,6 @@
 package com.leveraon.csfoundmental.datastructure.lists;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 public class SinglyLinkedList<E> {
-	@Data
-	@AllArgsConstructor
-	private static class Node<E> {
-		private E element;
-		private Node<E> next;
-	}
 
 	// instance variables of the SinglyLinkedList
 	private Node<E> head = null;
@@ -44,7 +35,7 @@ public class SinglyLinkedList<E> {
 
 	// update methods
 	public void addFirst(E e) {
-		head = new Node<>(e, head);
+		head = new Node<>(e, null, head);
 		if (size == 0)
 			tail = head;
 		size++;
@@ -58,8 +49,8 @@ public class SinglyLinkedList<E> {
 		// special case: new node becomes tail also
 		// adds element e to the end of the list
 
-		Node<E> newest = new Node<>(e, null); // node will eventually be the
-												// tail
+		Node<E> newest = new Node<>(e, null, null); // node will eventually be the
+		// tail
 		if (isEmpty())
 			head = newest;
 		else
