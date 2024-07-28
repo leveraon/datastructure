@@ -1,6 +1,9 @@
 package com.leveraon.csfoundmental.datastructure.arrays;
 
+import lombok.extern.slf4j.Slf4j;
+
 /** Simulation of a Tic-Tac-Toe game (does not do strategy). */
+@Slf4j
 public class TicTacToe {
 	public static final int X = 1, O = -1; // players
 	public static final int EMPTY = 0; // empty cell
@@ -44,7 +47,7 @@ public class TicTacToe {
 				|| (board[0][2] + board[1][2] + board[2][2] == mark * 3) // column
 																			// 2
 				|| (board[0][0] + board[1][1] + board[2][2] == mark * 3) // diagonal
-		|| (board[2][0] + board[1][1] + board[0][2] == mark * 3)); // rev diag
+				|| (board[2][0] + board[1][1] + board[0][2] == mark * 3)); // rev diag
 	}
 
 	/**
@@ -66,15 +69,15 @@ public class TicTacToe {
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				switch (board[i][j]) {
-				case X:
-					sb.append("X");
-					break;
-				case O:
-					sb.append("O");
-					break;
-				case EMPTY:
-					sb.append(" ");
-					break;
+					case X:
+						sb.append("X");
+						break;
+					case O:
+						sb.append("O");
+						break;
+					case EMPTY:
+						sb.append(" ");
+						break;
 				}
 				if (j < 2)
 					sb.append("|"); // column boundary
@@ -98,9 +101,9 @@ public class TicTacToe {
 		game.putMark(1, 2);
 		game.putMark(1, 0);
 		game.putMark(2, 0);
-		System.out.println(game);
+		log.info("Game {}", game);
 		int winningPlayer = game.winner();
 		String[] outcome = { "O wins", "Tie", "X wins" }; // rely on ordering
-		System.out.println(outcome[1 + winningPlayer]);
+		log.info(outcome[1 + winningPlayer]);
 	}
 }
