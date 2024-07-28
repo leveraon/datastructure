@@ -5,18 +5,19 @@ import org.junit.jupiter.api.BeforeEach;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TestBase {
+import lombok.extern.slf4j.Slf4j;
 
-	private static final Logger LOG = LoggerFactory.getLogger(TestBase.class);
+@Slf4j
+public class TestBase {
 
 	@BeforeEach
 	public void setUp() {
-		LOG.info("-------------------------------start");
+		log.info("-------------------------------start");
 	}
 
 	@AfterEach
 	public void tearDown() {
-		LOG.info("-------------------------------end");
+		log.info("-------------------------------end");
 	}
 
 	public <T> void printArray(T[] array) {

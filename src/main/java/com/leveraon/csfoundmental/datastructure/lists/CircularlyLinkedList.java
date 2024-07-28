@@ -38,10 +38,10 @@ public class CircularlyLinkedList<E> {
 
 	public void addFirst(E e) { // adds element e to the front of the list
 		if (size == 0) {
-			tail = new Node<>(e, null);
+			tail = new Node<>(e, null, null);
 			tail.setNext(tail); // link to itself circularly
 		} else {
-			Node<E> newest = new Node<>(e, tail.getNext());
+			Node<E> newest = new Node<>(e, null, tail.getNext());
 			tail.setNext(newest);
 		}
 		size++;

@@ -1,6 +1,6 @@
 package com.leveraon.csfoundmental.datastructure.lists;
 
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList<E> implements Cloneable {
 
 	// instance variables of the SinglyLinkedList
 	private Node<E> head = null;
@@ -72,5 +72,23 @@ public class SinglyLinkedList<E> {
 		// removes and returns the first element // nothing to remove
 		// will become null if list had only one node // special case as list is
 		// now empty
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// always use inherited Object.clone() to create the initial copy
+		SinglyLinkedList<E> other = (SinglyLinkedList<E>) super.clone(); // safe cast
+		if (size > 0) { // we need independent chain of nodes
+			other.head = new Node<>(head.getElement(), null, null);
+			Node<E> walk = head.getNext(); // walk through remainder of original list
+			Node<E> otherTail = other.head; // remember most recently created node
+			while (walk != null) { // make a new node storing same element
+				Node<E> newest = new Node<>(walk.getElement(), null, null);
+				otherTail.setNext(newest); // link previous node to this one
+				otherTail = newest;
+				walk = walk.getNext();
+			}
+		}
+		return other;
 	}
 }

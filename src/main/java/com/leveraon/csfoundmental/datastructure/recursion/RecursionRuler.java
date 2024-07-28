@@ -1,5 +1,8 @@
 package com.leveraon.csfoundmental.datastructure.recursion;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class RecursionRuler {
 
 	public static void drawRuler(int nInches, int majorLenghth) {
@@ -30,5 +33,12 @@ public class RecursionRuler {
 
 	private static void drawLine(int tickLength) {
 		drawLine(tickLength, -1);
+	}
+
+	public static void main(String[] args) {
+		int inches = 2, majorLength = 4;
+
+		log.info("Drawing Ruler...\n ");
+		drawRuler(inches, majorLength);
 	}
 }
