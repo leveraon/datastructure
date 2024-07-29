@@ -1,4 +1,4 @@
-package main.java.com.leveraon.csfoundmental.datastructure.queues;
+package com.leveraon.csfoundmental.datastructure.queues;
 
 /**
  * Interface for a double-ended queue: a collection of elements that can be

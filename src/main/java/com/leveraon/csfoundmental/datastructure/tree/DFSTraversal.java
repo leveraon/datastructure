@@ -1,5 +1,6 @@
-package main.java.com.leveraon.csfoundmental.datastructure.tree;
+package com.leveraon.csfoundmental.datastructure.tree;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class DFSTraversal {

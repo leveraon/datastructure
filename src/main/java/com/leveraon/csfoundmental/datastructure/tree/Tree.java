@@ -1,23 +1,27 @@
-package main.java.com.leveraon.csfoundmental.datastructure.tree;
+package com.leveraon.csfoundmental.datastructure.tree;
+
+import java.util.Iterator;
+
+import com.leveraon.csfoundmental.datastructure.lists.Node;
 
 /**
  * An interface for a tree where nodes can have an arbitrary number of children.
  */
 public interface Tree<E> extends Iterable<E> {
-    Position<E> root();
+    Node<E> root();
 
-    Position<E> parent(Position<E> p) throws IllegalArgumentException;
+    Node<E> parent(Node<E> p) throws IllegalArgumentException;
 
-    Iterable<Position<E>> children(Position<E> p)
+    Iterable<Node<E>> children(Node<E> p)
             throws IllegalArgumentException;
 
-    int numChildren(Position<E> p) throws IllegalArgumentException;
+    int numChildren(Node<E> p) throws IllegalArgumentException;
 
-    boolean isInternal(Position<E> p) throws IllegalArgumentException;
+    boolean isInternal(Node<E> p) throws IllegalArgumentException;
 
-    boolean isExternal(Position<E> p) throws IllegalArgumentException;
+    boolean isExternal(Node<E> p) throws IllegalArgumentException;
 
-    boolean isRoot(Position<E> p) throws IllegalArgumentException;
+    boolean isRoot(Node<E> p) throws IllegalArgumentException;
 
     int size();
 
@@ -25,5 +29,5 @@ public interface Tree<E> extends Iterable<E> {
 
     Iterator<E> iterator();
 
-    Iterable<Position<E>> positions();
+    Iterable<Node<E>> Nodes();
 }

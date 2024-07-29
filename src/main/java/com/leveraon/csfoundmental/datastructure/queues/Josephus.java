@@ -1,4 +1,4 @@
-package main.java.com.leveraon.csfoundmental.datastructure.queues;
+package com.leveraon.csfoundmental.datastructure.queues;
 
 public class Josephus {
     /** Computes the winner of the Josephus problem using a circular queue. */

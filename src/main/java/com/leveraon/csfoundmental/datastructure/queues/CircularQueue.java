@@ -1,4 +1,4 @@
-package main.java.com.leveraon.csfoundmental.datastructure.queues;
+package com.leveraon.csfoundmental.datastructure.queues;
 
 public interface CircularQueue<E> extends Queue<E> {
     /**

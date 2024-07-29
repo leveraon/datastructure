@@ -1,4 +1,4 @@
-package main.java.com.leveraon.csfoundmental.datastructure.queues;
+package com.leveraon.csfoundmental.datastructure.queues;
 
 public interface Queue<E> {
     /** Returns the number of elements in the queue. */

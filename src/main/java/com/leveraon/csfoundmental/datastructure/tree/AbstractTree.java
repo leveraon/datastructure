@@ -1,18 +1,20 @@
-package main.java.com.leveraon.csfoundmental.datastructure.tree;
+package com.leveraon.csfoundmental.datastructure.tree;
+
+import com.leveraon.csfoundmental.datastructure.lists.Node;
 
 /**
  * An abstract base class providing some functionality of the Tree interface.
  */
 public abstract class AbstractTree<E> implements Tree<E> {
-    public boolean isInternal(Position<E> p) {
+    public boolean isInternal(Node<E> p) {
         return numChildren(p) > 0;
     }
 
-    public boolean isExternal(Position<E> p) {
+    public boolean isExternal(Node<E> p) {
         return numChildren(p) == 0;
     }
 
-    public boolean isRoot(Position<E> p) {
+    public boolean isRoot(Node<E> p) {
         return p == root();
     }
 

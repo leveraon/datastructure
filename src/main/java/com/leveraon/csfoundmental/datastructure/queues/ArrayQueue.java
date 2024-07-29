@@ -1,7 +1,9 @@
-package main.java.com.leveraon.csfoundmental.datastructure.queues;
+package com.leveraon.csfoundmental.datastructure.queues;
 
 /** Implementation of the queue ADT using a fixed-length array. */
 public class ArrayQueue<E> implements Queue<E> {
+
+    static int CAPACITY = 1000;
     // instance variables
     private E[] data; // generic array used for storage
     private int f = 0; // index of the front element

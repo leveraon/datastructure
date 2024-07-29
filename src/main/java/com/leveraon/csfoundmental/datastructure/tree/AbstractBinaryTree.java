@@ -1,14 +1,14 @@
-package main.java.com.leveraon.csfoundmental.datastructure.tree;
+package com.leveraon.csfoundmental.datastructure.tree;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.text.Position;
+import com.leveraon.csfoundmental.datastructure.lists.Node;
 
 public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements BinaryTree<E> {
-    /** Returns the Position of p's sibling (or null if no sibling exists). */
-    public Position<E> sibling(Position<E> p) {
-        Position<E> parent = parent(p);
+    /** Returns the Node of p's sibling (or null if no sibling exists). */
+    public Node<E> sibling(Node<E> p) {
+        Node<E> parent = parent(p);
         if (parent == null)
             return null; // p must be the root
         if (p == left(parent)) // p is a left child
@@ -17,8 +17,8 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements B
             return left(parent); // (left child might be null)
     }
 
-    /** Returns the number of children of Position p. */
-    public int numChildren(Position<E> p) {
+    /** Returns the number of children of Node p. */
+    public int numChildren(Node<E> p) {
         int count = 0;
         if (left(p) != null)
             count++;
@@ -28,10 +28,10 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements B
     }
 
     /**
-     * Returns an iterable collection of the Positions representing p's children.
+     * Returns an iterable collection of the Nodes representing p's children.
      */
-    public Iterable<Position<E>> children(Position<E> p) {
-        List<Position<E>> snapshot = new ArrayList<>(2); // max capacity of 2
+    public Iterable<Node<E>> children(Node<E> p) {
+        List<Node<E>> snapshot = new ArrayList<>(2); // max capacity of 2
         if (left(p) != null)
             snapshot.add(left(p));
         if (right(p) != null)
