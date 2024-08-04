@@ -3,6 +3,9 @@ package com.leveraon.csfoundmental.datastructure.sorting;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class MergeSort {
     /** Merge contents of arrays S1 and S2 into properly sized array S. */
     public static <K> void merge(K[] S1, K[] S2, K[] S, Comparator<K> comp) {
@@ -30,4 +33,30 @@ public class MergeSort {
         // merge results
         merge(S1, S2, S, comp); // merge sorted halves back into original
     }
+
+    public static class IntComparator implements Comparator<Integer> {
+
+        @Override
+        public int compare(Integer o1, Integer o2) {
+            return (o1 - o2 > 0) ? 1 : (o1 - o2 == 0) ? 0 : -1;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Integer[] array = { 1, 2, 3, 4, 55, 88, 32, 23, 24, 13, 39, 9, 29, 74, 28 };
+        log.info("Array before sorting ");
+        for (Integer integer : array) {
+            System.out.print(integer + ",");
+        }
+        System.out.println("\n");
+        Comparator<Integer> comp = new IntComparator();
+        mergeSort(array, comp);
+
+        log.info("Array after sorting ");
+        for (Integer integer : array) {
+            System.out.print(integer + ",");
+        }
+    }
+
 }

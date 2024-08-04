@@ -4,7 +4,11 @@ import java.util.Comparator;
 
 import com.leveraon.csfoundmental.datastructure.queues.LinkedQueue;
 import com.leveraon.csfoundmental.datastructure.queues.Queue;
+import com.leveraon.csfoundmental.datastructure.sorting.MergeSort.IntComparator;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class QuickSort {
     /**
      * Quick-sort contents
@@ -39,5 +43,23 @@ public class QuickSort {
             S.enqueue(E.dequeue());
         while (!G.isEmpty())
             S.enqueue(G.dequeue());
+    }
+
+    public static void main(String[] args) {
+        Integer[] array = { 1, 2, 3, 4, 55, 88, 32, 23, 24, 13, 39, 9, 29, 74, 28 };
+        Queue<Integer> linkedQueue = new LinkedQueue<>();
+        log.info("Array before sorting ");
+        for (Integer integer : array) {
+            System.out.print(integer + ",");
+            linkedQueue.enqueue(integer);
+        }
+        System.out.println("\n");
+        Comparator<Integer> comp = new IntComparator();
+        quickSort(linkedQueue, comp);
+
+        log.info("Array after sorting ");
+        while (!linkedQueue.isEmpty()) {
+            System.out.print(linkedQueue.dequeue() + ",");
+        }
     }
 }

@@ -1,5 +1,8 @@
 package com.leveraon.csfoundmental.datastructure.recursion;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class RecursionEscalator {
 
 	public static void drawEscalator(int n) {
@@ -7,7 +10,7 @@ public class RecursionEscalator {
 		if (n >= 0) {
 			drawEscalator(n - 1);
 			for (int i = 0; i < n; i++) {
-				System.out.print('*');
+				System.out.print("*");
 			}
 			System.out.println('\n');
 		}
@@ -20,5 +23,13 @@ public class RecursionEscalator {
 			}
 			System.out.println("");
 		}
+	}
+
+	public static void main(String[] args) {
+		int escalator = 10;
+		drawEscalator(escalator);
+
+		int stircase = 10;
+		drawStairCase(stircase);
 	}
 }
