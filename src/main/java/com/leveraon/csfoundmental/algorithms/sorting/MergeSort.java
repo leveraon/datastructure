@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithm.sorting;
+package com.leveraon.csfoundmental.algorithms.sorting;
 
 import java.util.Arrays;
 import java.util.Comparator;

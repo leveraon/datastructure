@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithm.recursion;
+package com.leveraon.csfoundmental.algorithms.recursion;
 
 import java.util.Arrays;
 

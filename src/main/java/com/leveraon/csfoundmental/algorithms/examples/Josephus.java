@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithm.examples;
+package com.leveraon.csfoundmental.algorithms.examples;
 
 import com.leveraon.csfoundmental.datastructure.queues.CircularQueue;
 import com.leveraon.csfoundmental.datastructure.queues.LinkedCircularQueue;
