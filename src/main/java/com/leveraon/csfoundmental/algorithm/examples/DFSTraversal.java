@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.datastructure.tree;
+package com.leveraon.csfoundmental.algorithm.examples;
 
 import java.util.Iterator;
 import java.util.LinkedList;

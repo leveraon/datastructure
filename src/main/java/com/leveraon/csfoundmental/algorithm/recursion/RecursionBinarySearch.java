@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.datastructure.recursion;
+package com.leveraon.csfoundmental.algorithm.recursion;
 
 public class RecursionBinarySearch {
 

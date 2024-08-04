@@ -1,10 +1,10 @@
-package com.leveraon.csfoundmental.datastructure.sorting;
+package com.leveraon.csfoundmental.algorithm.sorting;
 
 import java.util.Comparator;
 
+import com.leveraon.csfoundmental.algorithm.sorting.MergeSort.IntComparator;
 import com.leveraon.csfoundmental.datastructure.queues.LinkedQueue;
 import com.leveraon.csfoundmental.datastructure.queues.Queue;
-import com.leveraon.csfoundmental.datastructure.sorting.MergeSort.IntComparator;
 
 import lombok.extern.slf4j.Slf4j;
 

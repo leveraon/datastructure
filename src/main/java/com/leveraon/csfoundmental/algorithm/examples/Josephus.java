@@ -1,4 +1,7 @@
-package com.leveraon.csfoundmental.datastructure.queues;
+package com.leveraon.csfoundmental.algorithm.examples;
+
+import com.leveraon.csfoundmental.datastructure.queues.CircularQueue;
+import com.leveraon.csfoundmental.datastructure.queues.LinkedCircularQueue;
 
 public class Josephus {
     /** Computes the winner of the Josephus problem using a circular queue. */

@@ -2,6 +2,7 @@ package com.leveraon.csfoundmental.datastructure.recursion;
 
 import org.junit.jupiter.api.Test;
 
+import com.leveraon.csfoundmental.algorithm.recursion.RecursionFibonacci;
 import com.leveraon.csfoundmental.datastructure.TestBase;
 
 public class RecursionFibonacciTest extends TestBase {
