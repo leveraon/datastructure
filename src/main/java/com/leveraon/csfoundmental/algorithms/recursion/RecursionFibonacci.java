@@ -7,22 +7,22 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RecursionFibonacci {
 
-	public static Integer[] fibonacci(int n) {
+	public static Double[] fibonacci(Double n) {
 		log.info("Current n : " + n);
 		if (n <= 1) {
-			Integer[] result = { n, 0 };
+			Double[] result = { n, Double.valueOf(0) };
 
 			return result;
 		} else {
-			Integer[] next = fibonacci(n - 1);
-			Integer[] result = { next[1] + next[0], next[0] };
+			Double[] next = fibonacci(n - 1);
+			Double[] result = { next[1] + next[0], next[0] };
 			log.info("next : " + Arrays.toString(next));
 			return result;
 		}
 	}
 
 	public static void main(String[] args) {
-		int fibonacci = 110;
+		Double fibonacci = Double.valueOf(50);
 		fibonacci(fibonacci);
 	}
 }
