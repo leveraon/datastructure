@@ -1,8 +1,5 @@
 package com.leveraon.csfoundmental.algorithms.examples;
 
-import com.leveraon.csfoundmental.datastructure.lists.SinglyLinkedList;
-import com.leveraon.csfoundmental.datastructure.queues.LinkedQueue;
-import com.leveraon.csfoundmental.datastructure.queues.Queue;
 import com.leveraon.csfoundmental.datastructure.stacks.LinkedStack;
 import com.leveraon.csfoundmental.datastructure.stacks.Stack;
 
@@ -19,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
  * Could you do it in-place without allocating extra space?
  */
 @Slf4j
-public class ReveseWords {
+public class ReverseWords {
     public static String reverseWords(char[] s) {
         int i = 0;
         for (int j = 0; j < s.length; j++) {

@@ -15,9 +15,9 @@ public class RecursionFibonacci {
 			return result;
 		} else {
 			Double[] next = fibonacci(n - 1);
-			Double[] result = { next[1] + next[0], next[0] };
+			Double[] answer = { next[1] + next[0], next[0] };
 			log.info("next : " + Arrays.toString(next));
-			return result;
+			return answer;
 		}
 	}
 
