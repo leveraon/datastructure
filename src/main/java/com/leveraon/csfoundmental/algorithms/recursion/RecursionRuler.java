@@ -36,7 +36,7 @@ public class RecursionRuler {
 	}
 
 	public static void main(String[] args) {
-		int inches = 2, majorLength = 4;
+		int inches = 5, majorLength = 4;
 
 		log.info("Drawing Ruler...\n ");
 		drawRuler(inches, majorLength);
