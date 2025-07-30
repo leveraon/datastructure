@@ -5,7 +5,7 @@ import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class RecursionFibonacci {
+public class FibonacciRecursive {
 
 	public static Double[] fibonacci(Double n) {
 		log.info("Current n : " + n);

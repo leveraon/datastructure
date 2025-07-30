@@ -3,7 +3,7 @@ package com.leveraon.csfoundmental.algorithms.recursion;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class RecursionBinarySum {
+public class BinarySumRecursive {
     /** Returns the sum of subarray data[low] through data[high] inclusive. */
     public static int binarySum(int[] data, int low, int high) {
         if (low > high) // zero elements in subarray

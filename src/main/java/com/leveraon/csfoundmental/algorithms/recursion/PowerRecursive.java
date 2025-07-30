@@ -3,7 +3,7 @@ package com.leveraon.csfoundmental.algorithms.recursion;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class RecursionPower {
+public class PowerRecursive {
     /**
      * Computes the value of x raised to the nth power, for nonnegative integer n.
      */

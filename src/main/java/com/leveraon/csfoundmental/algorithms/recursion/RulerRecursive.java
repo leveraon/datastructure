@@ -3,7 +3,7 @@ package com.leveraon.csfoundmental.algorithms.recursion;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class RecursionRuler {
+public class RulerRecursive {
 
 	public static void drawRuler(int nInches, int majorLenghth) {
 

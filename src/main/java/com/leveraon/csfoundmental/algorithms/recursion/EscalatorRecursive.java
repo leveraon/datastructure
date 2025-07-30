@@ -3,7 +3,7 @@ package com.leveraon.csfoundmental.algorithms.recursion;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class RecursionEscalator {
+public class EscalatorRecursive {
 
 	public static void drawEscalator(int n) {
 

@@ -3,7 +3,7 @@ package com.leveraon.csfoundmental.algorithms.recursion;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class RecursionFactorialFunction {
+public class FactorialFunctionRecursive {
     public static int factorial(int n) throws IllegalArgumentException {
         if (n < 0)
             throw new IllegalArgumentException(); // argument must be nonnegative
