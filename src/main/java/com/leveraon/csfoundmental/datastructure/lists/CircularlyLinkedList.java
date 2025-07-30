@@ -21,7 +21,7 @@ public class CircularlyLinkedList<E> {
 	public E first() { // returns (but does not remove) the first element
 		if (isEmpty())
 			return null;
-		return tail.getNext().getElement(); // the head is *after* the tail
+		return tail.getRight().getElement(); // the head is *after* the tail
 	}
 
 	public E last() { // returns (but does not remove) the last element
@@ -33,33 +33,33 @@ public class CircularlyLinkedList<E> {
 	// update methods
 	public void rotate() { // rotate the first element to the back of the list
 		if (tail != null) // if empty, do nothing
-			tail = tail.getNext(); // the old head becomes the new tail
+			tail = tail.getRight(); // the old head becomes the new tail
 	}
 
 	public void addFirst(E e) { // adds element e to the front of the list
 		if (size == 0) {
 			tail = new Node<>(e, null, null);
-			tail.setNext(tail); // link to itself circularly
+			tail.setRight(tail); // link to itself circularly
 		} else {
-			Node<E> newest = new Node<>(e, null, tail.getNext());
-			tail.setNext(newest);
+			Node<E> newest = new Node<>(e, null, tail.getRight());
+			tail.setRight(newest);
 		}
 		size++;
 	}
 
 	public void addLast(E e) { // adds element e to the end of the list
 		addFirst(e); // insert new element at front of list
-		tail = tail.getNext(); // now new element becomes the tail
+		tail = tail.getRight(); // now new element becomes the tail
 	}
 
 	public E removeFirst() { // removes and returns the first element
 		if (isEmpty())
 			return null; // nothing to remove
-		Node<E> head = tail.getNext();
+		Node<E> head = tail.getRight();
 		if (head == tail)
 			tail = null; // must be the only node left
 		else
-			tail.setNext(head.getNext()); // removes ”head” from the list
+			tail.setRight(head.getRight()); // removes ”head” from the list
 		size--;
 		return head.getElement();
 	}

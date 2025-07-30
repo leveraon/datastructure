@@ -17,7 +17,7 @@ public class CycleDetection {
      */
     public boolean hasCycle(Node head) {
         // Edge cases: empty list or single node list cannot have a cycle
-        if (head == null || head.getNext() == null) {
+        if (head == null || head.getRight() == null) {
             return false;
         }
 
@@ -26,9 +26,9 @@ public class CycleDetection {
 
         // Loop as long as fast and fast.next are not null
         // This ensures fast doesn't go out of bounds on a non-cyclic list
-        while (fast != null && fast.getNext() != null) {
-            slow = slow.getNext();         // Move slow by one step
-            fast = fast.getNext().getNext();    // Move fast by two steps
+        while (fast != null && fast.getRight() != null) {
+            slow = slow.getRight();         // Move slow by one step
+            fast = fast.getRight().getRight();    // Move fast by two steps
 
             // If they meet, a cycle is detected
             if (slow == fast) {
@@ -49,7 +49,7 @@ public class CycleDetection {
      */
     public Node detectCycle(Node head) {
         // Edge cases: empty list or single node list cannot have a cycle
-        if (head == null || head.getNext() == null) {
+        if (head == null || head.getRight() == null) {
             return null;
         }
 
@@ -58,9 +58,9 @@ public class CycleDetection {
         boolean cycleFound = false; // Flag to indicate if a cycle was found
 
         // Phase 1: Detect the cycle
-        while (fast != null && fast.getNext() != null) {
-            slow = slow.getNext();
-            fast = fast.getNext().getNext();
+        while (fast != null && fast.getRight() != null) {
+            slow = slow.getRight();
+            fast = fast.getRight().getRight();
 
             if (slow == fast) {
                 cycleFound = true;
@@ -77,8 +77,8 @@ public class CycleDetection {
         // Reset slow to head, fast remains at meeting point
         slow = head;
         while (slow != fast) {
-            slow = slow.getNext();
-            fast = fast.getNext();
+            slow = slow.getRight();
+            fast = fast.getRight();
         }
 
         // Both pointers now point to the start of the cycle

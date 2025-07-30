@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Node<E> {
     private E element;
-    private Node<E> prev;
-    private Node<E> next;
+    private Node<E> left;
+    private Node<E> right;
 }
