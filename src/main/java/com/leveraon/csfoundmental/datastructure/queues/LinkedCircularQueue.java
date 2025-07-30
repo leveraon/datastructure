@@ -1,6 +1,6 @@
 package com.leveraon.csfoundmental.datastructure.queues;
 
-import com.leveraon.csfoundmental.datastructure.lists.Node;
+import com.leveraon.csfoundmental.datastructure.tree.Node;
 
 public class LinkedCircularQueue<E> implements CircularQueue<E> {
     // instance variables of the CircularlyLinkedList

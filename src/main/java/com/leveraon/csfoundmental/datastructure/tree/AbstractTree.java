@@ -1,7 +1,5 @@
 package com.leveraon.csfoundmental.datastructure.tree;
 
-import com.leveraon.csfoundmental.datastructure.lists.Node;
-
 /**
  * An abstract base class providing some functionality of the Tree interface.
  */

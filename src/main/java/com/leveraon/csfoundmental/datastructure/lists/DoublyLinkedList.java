@@ -1,5 +1,7 @@
 package com.leveraon.csfoundmental.datastructure.lists;
 
+import com.leveraon.csfoundmental.datastructure.tree.Node;
+
 public class DoublyLinkedList<E> {
 
 	// instance variables of the DoublyLinkedList

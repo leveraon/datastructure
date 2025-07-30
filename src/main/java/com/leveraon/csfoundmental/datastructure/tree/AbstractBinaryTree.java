@@ -3,8 +3,6 @@ package com.leveraon.csfoundmental.datastructure.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.leveraon.csfoundmental.datastructure.lists.Node;
-
 public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements BinaryTree<E> {
     /** Returns the Node of p's sibling (or null if no sibling exists). */
     public Node<E> sibling(Node<E> p) {

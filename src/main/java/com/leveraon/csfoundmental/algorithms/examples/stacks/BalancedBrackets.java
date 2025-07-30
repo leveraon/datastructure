@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.stacks;
 
 import java.util.HashMap;
 

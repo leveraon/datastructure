@@ -2,8 +2,6 @@ package com.leveraon.csfoundmental.datastructure.tree;
 
 import java.util.Iterator;
 
-import com.leveraon.csfoundmental.datastructure.lists.Node;
-
 /**
  * An interface for a tree where nodes can have an arbitrary number of children.
  */

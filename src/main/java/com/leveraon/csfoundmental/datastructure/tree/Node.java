@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.datastructure.lists;
+package com.leveraon.csfoundmental.datastructure.tree;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

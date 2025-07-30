@@ -1,8 +1,8 @@
-package com.leveraon.csfoundmental.algorithms.sorting;
+package com.leveraon.csfoundmental.algorithms.examples.sorting;
 
 import java.util.Comparator;
 
-import com.leveraon.csfoundmental.algorithms.sorting.MergeSort.IntComparator;
+import com.leveraon.csfoundmental.algorithms.examples.sorting.MergeSort.IntComparator;
 import com.leveraon.csfoundmental.datastructure.queues.LinkedQueue;
 import com.leveraon.csfoundmental.datastructure.queues.Queue;
 

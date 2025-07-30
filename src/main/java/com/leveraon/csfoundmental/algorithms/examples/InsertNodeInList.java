@@ -3,7 +3,7 @@
  */
 package com.leveraon.csfoundmental.algorithms.examples;
 
-import com.leveraon.csfoundmental.datastructure.lists.Node;
+import com.leveraon.csfoundmental.datastructure.tree.Node;
 
 /**
  * 

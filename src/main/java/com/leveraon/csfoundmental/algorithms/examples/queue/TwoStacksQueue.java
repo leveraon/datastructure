@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.queue;
 
 import java.util.EmptyStackException;
 
@@ -12,9 +12,9 @@ import com.leveraon.csfoundmental.datastructure.stacks.LinkedStack;
  */
 public class TwoStacksQueue<T> {
 	// Stack to handle incoming elements (for push operations)
-	private LinkedStack<T> inputStack;
+	private LinkedStack<T> inputStack = new LinkedStack<>();
 	// Stack to handle outgoing elements (for pop and peek operations)
-	private LinkedStack<T> outputStack;
+	private LinkedStack<T> outputStack = new LinkedStack<>();
 
 	/**
 	 * Pushes element x to the back of the queue (enqueue). Time Complexity: O(1)
