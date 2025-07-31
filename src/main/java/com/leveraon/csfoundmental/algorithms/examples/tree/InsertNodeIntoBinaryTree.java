@@ -10,7 +10,7 @@ import com.leveraon.csfoundmental.datastructure.tree.Node;
 /**
  * 
  */
-public class BinaryTreeInsertion {
+public class InsertNodeIntoBinaryTree {
 	/**
 	 * Inserts a new node with the given value into the binary tree following a
 	 * level-order (breadth-first) insertion strategy.
@@ -123,7 +123,7 @@ public class BinaryTreeInsertion {
 
 	// Main method for testing
 	public static void main(String[] args) {
-		BinaryTreeInsertion solution = new BinaryTreeInsertion();
+		InsertNodeIntoBinaryTree solution = new InsertNodeIntoBinaryTree();
 
 		// Test Case 1: Empty tree
 		Node<Integer> root1 = null;

@@ -24,7 +24,7 @@ public class BruteForce {
 
     public static void main(String[] args) {
         String sentence = "thereisawillthereisaway";
-        String pattern = "the";
+        String pattern = "saw";
 
         log.info("String {} contains pattern '{}' at index: {}", sentence, pattern,
                 findBrute(sentence.toCharArray(), pattern.toCharArray()));
