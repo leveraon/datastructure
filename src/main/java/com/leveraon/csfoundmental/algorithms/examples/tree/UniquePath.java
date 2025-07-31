@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.tree;
 
 import lombok.extern.slf4j.Slf4j;
 

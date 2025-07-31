@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.recursion;
 
 import java.util.ArrayList;
 

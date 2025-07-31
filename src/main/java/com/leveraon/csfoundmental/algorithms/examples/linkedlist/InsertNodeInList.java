@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.linkedlist;
 
 import com.leveraon.csfoundmental.datastructure.tree.Node;
 

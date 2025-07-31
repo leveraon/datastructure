@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.stacks;
 
 import com.leveraon.csfoundmental.algorithms.utils.RandomIntArrayGenerator;
 import com.leveraon.csfoundmental.datastructure.stacks.ArrayStack;

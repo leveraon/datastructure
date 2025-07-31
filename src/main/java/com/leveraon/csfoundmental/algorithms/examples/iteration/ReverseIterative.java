@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.iteration;
 
 import com.leveraon.csfoundmental.algorithms.utils.RandomIntArrayGenerator;
 

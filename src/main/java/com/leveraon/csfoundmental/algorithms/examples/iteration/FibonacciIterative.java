@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.iteration;
 
 /**
  * 3. Iterative Approach (Bottom-Up Dynamic Programming) This is generally the

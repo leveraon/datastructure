@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples;
+package com.leveraon.csfoundmental.algorithms.examples.linkedlist;
 
 import com.leveraon.csfoundmental.algorithms.utils.RandomIntArrayGenerator;
 
@@ -17,7 +17,7 @@ class ListNode {
 	}
 }
 
-public class LeftNotationListNode {
+public class LeftRotationListNode {
 	public ListNode rotateLeft(ListNode head, int k) {
 		// 1. Handle Edge Cases
 		if (head == null || head.next == null || k == 0) {
@@ -94,7 +94,7 @@ public class LeftNotationListNode {
 
 	// Main method for demonstration
 	public static void main(String[] args) {
-		LeftNotationListNode solver = new LeftNotationListNode();
+		LeftRotationListNode solver = new LeftRotationListNode();
 
 		System.out.println("--- Test Case 1: Basic Rotation ---");
 		int[] arr1 = RandomIntArrayGenerator.generateRandomIntArray(5, 0, 50);
