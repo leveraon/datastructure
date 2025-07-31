@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.text;
+package com.leveraon.csfoundmental.algorithms.examples.text;
 
 import java.util.HashMap;
 import java.util.Map;
