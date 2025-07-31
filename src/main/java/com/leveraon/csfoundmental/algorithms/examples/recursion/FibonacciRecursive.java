@@ -15,14 +15,15 @@ public class FibonacciRecursive {
 			return result;
 		} else {
 			Double[] next = fibonacci(n - 1);
+			log.info("next: {}", Arrays.toString(next));
 			Double[] answer = { next[1] + next[0], next[0] };
-			log.info("next : " + Arrays.toString(next));
+			log.info("answer: {}", Arrays.toString(answer));
 			return answer;
 		}
 	}
 
 	public static void main(String[] args) {
-		Double fibonacci = Double.valueOf(50);
+		Double fibonacci = Double.valueOf(10);
 		fibonacci(fibonacci);
 	}
 }

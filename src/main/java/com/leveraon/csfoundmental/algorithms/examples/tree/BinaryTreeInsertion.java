@@ -3,28 +3,9 @@
  */
 package com.leveraon.csfoundmental.algorithms.examples.tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
-
-	// Constructors
-	TreeNode() {
-	} // Default constructor
-
-	TreeNode(int val) {
-		this.val = val;
-	} // Constructor with value
-
-	TreeNode(int val, TreeNode left, TreeNode right) { // Constructor with value and children
-		this.val = val;
-		this.left = left;
-		this.right = right;
-	}
-}
+import com.leveraon.csfoundmental.datastructure.queues.LinkedQueue;
+import com.leveraon.csfoundmental.datastructure.queues.Queue;
+import com.leveraon.csfoundmental.datastructure.tree.Node;
 
 /**
  * 
@@ -38,35 +19,35 @@ public class BinaryTreeInsertion {
 	 * @param val  The value to insert.
 	 * @return The root of the modified binary tree.
 	 */
-	public TreeNode insertIntoTreeNode(TreeNode root, int val) {
+	public Node<Integer> insertIntoNode(Node<Integer> root, int val) {
 		// Edge case: If the tree is empty, the new node becomes the root.
 		if (root == null) {
-			return new TreeNode(val);
+			return new Node<Integer>(val, null, null);
 		}
 
-		Queue<TreeNode> queue = new LinkedList<>();
-		queue.offer(root); // Start BFS from the root
+		Queue<Node<Integer>> queue = new LinkedQueue<>();
+		queue.enqueue(root); // Start BFS from the root
 
 		// Perform BFS to find the first available spot
 		while (!queue.isEmpty()) {
-			TreeNode current = queue.poll();
+			Node<Integer> current = queue.dequeue();
 
 			// Try to insert into the left child
-			if (current.left == null) {
-				current.left = new TreeNode(val);
+			if (current.getLeft() == null) {
+				current.setLeft(new Node<Integer>(val, null, null));
 				return root; // Insertion complete, return the modified root
 			} else {
 				// Left child exists, add it to the queue for further exploration
-				queue.offer(current.left);
+				queue.enqueue(current.getLeft());
 			}
 
 			// Try to insert into the right child
-			if (current.right == null) {
-				current.right = new TreeNode(val);
+			if (current.getRight() == null) {
+				current.setRight(new Node<Integer>(val, null, null));
 				return root; // Insertion complete, return the modified root
 			} else {
 				// Right child exists, add it to the queue
-				queue.offer(current.right);
+				queue.enqueue(current.getRight());
 			}
 		}
 
@@ -79,30 +60,31 @@ public class BinaryTreeInsertion {
 	// --- Helper methods for demonstration (optional) ---
 
 	// Method to build a sample tree from an array (level-order)
-	public TreeNode buildTree(Integer[] values) {
+	public Node<Integer> buildTree(Integer[] values) {
 		if (values == null || values.length == 0 || values[0] == null) {
 			return null;
 		}
 
-		TreeNode root = new TreeNode(values[0]);
-		Queue<TreeNode> queue = new LinkedList<>();
-		queue.offer(root);
+		Node<Integer> root = new Node<Integer>(values[0], null, null);
+		Queue<Node<Integer>> queue = new LinkedQueue<>();
+		queue.enqueue(root);
 		int i = 1;
 
 		while (!queue.isEmpty() && i < values.length) {
-			TreeNode current = queue.poll();
+			Node<Integer> current = queue.dequeue();
 
 			// Left child
 			if (values[i] != null) {
-				current.left = new TreeNode(values[i]);
-				queue.offer(current.left);
+				current.setLeft(new Node<Integer>(values[i], null, null));
+				;
+				queue.enqueue(current.getLeft());
 			}
 			i++;
 
 			// Right child
 			if (i < values.length && values[i] != null) {
-				current.right = new TreeNode(values[i]);
-				queue.offer(current.right);
+				current.setRight(new Node<Integer>(values[i], null, null));
+				queue.enqueue(current.getRight());
 			}
 			i++;
 		}
@@ -110,14 +92,14 @@ public class BinaryTreeInsertion {
 	}
 
 	// Method to print tree level by level (for verification)
-	public void printTreeLevelOrder(TreeNode root) {
+	public void printTreeLevelOrder(Node<Integer> root) {
 		if (root == null) {
 			System.out.println("Tree is empty.");
 			return;
 		}
 
-		Queue<TreeNode> queue = new LinkedList<>();
-		queue.offer(root);
+		Queue<Node<Integer>> queue = new LinkedQueue<>();
+		queue.enqueue(root);
 		int level = 0;
 
 		System.out.println("Tree Level-Order Traversal:");
@@ -125,11 +107,11 @@ public class BinaryTreeInsertion {
 			int levelSize = queue.size();
 			System.out.print("Level " + level + ": ");
 			for (int i = 0; i < levelSize; i++) {
-				TreeNode current = queue.poll();
+				Node<Integer> current = queue.dequeue();
 				if (current != null) {
-					System.out.print(current.val + " ");
-					queue.offer(current.left);
-					queue.offer(current.right);
+					System.out.print(current.getElement() + " ");
+					queue.enqueue(current.getLeft());
+					queue.enqueue(current.getRight());
 				} else {
 					System.out.print("null "); // Represent null nodes for clarity
 				}
@@ -144,9 +126,9 @@ public class BinaryTreeInsertion {
 		BinaryTreeInsertion solution = new BinaryTreeInsertion();
 
 		// Test Case 1: Empty tree
-		TreeNode root1 = null;
+		Node<Integer> root1 = null;
 		System.out.println("--- Test Case 1: Inserting into an empty tree ---");
-		root1 = solution.insertIntoTreeNode(root1, 10);
+		root1 = solution.insertIntoNode(root1, 10);
 		solution.printTreeLevelOrder(root1); // Expected: Level 0: 10
 		System.out.println("\n");
 
@@ -156,11 +138,11 @@ public class BinaryTreeInsertion {
 		// / \
 		// 2 3
 		Integer[] initialValues2 = { 1, 2, 3 };
-		TreeNode root2 = solution.buildTree(initialValues2);
+		Node<Integer> root2 = solution.buildTree(initialValues2);
 		System.out.println("--- Test Case 2: Inserting 4 into [1, 2, 3] ---");
 		System.out.println("Before insertion:");
 		solution.printTreeLevelOrder(root2);
-		root2 = solution.insertIntoTreeNode(root2, 4);
+		root2 = solution.insertIntoNode(root2, 4);
 		System.out.println("After inserting 4:");
 		solution.printTreeLevelOrder(root2);
 		// Expected:
@@ -176,11 +158,11 @@ public class BinaryTreeInsertion {
 		// / \ /
 		// 4 5 6
 		Integer[] initialValues3 = { 1, 2, 3, 4, 5, 6 };
-		TreeNode root3 = solution.buildTree(initialValues3);
+		Node<Integer> root3 = solution.buildTree(initialValues3);
 		System.out.println("--- Test Case 3: Inserting 7 into [1, 2, 3, 4, 5, 6] ---");
 		System.out.println("Before insertion:");
 		solution.printTreeLevelOrder(root3);
-		root3 = solution.insertIntoTreeNode(root3, 7);
+		root3 = solution.insertIntoNode(root3, 7);
 		System.out.println("After inserting 7:");
 		solution.printTreeLevelOrder(root3);
 		// Expected:
