@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples.tree;
+package com.leveraon.csfoundmental.algorithms.examples.graph;
 
 import java.util.Iterator;
 import java.util.LinkedList;
