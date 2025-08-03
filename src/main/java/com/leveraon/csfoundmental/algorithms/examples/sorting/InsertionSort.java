@@ -5,6 +5,8 @@ package com.leveraon.csfoundmental.algorithms.examples.sorting;
 
 import java.util.Arrays;
 
+import com.leveraon.csfoundmental.algorithms.utils.RandomIntArrayGenerator;
+
 /**
  * 
  */
@@ -54,7 +56,7 @@ public class InsertionSort {
 	 */
 	public static void main(String[] args) {
 		// Test Case 1: General unsorted array
-		int[] arr1 = { 12, 11, 13, 5, 6 };
+		int[] arr1 = RandomIntArrayGenerator.generateRandomIntArray(10, 2, 30);
 		System.out.println("Original Array 1: " + Arrays.toString(arr1));
 		InsertionSort.sort(arr1);
 		System.out.println("Sorted Array 1:   " + Arrays.toString(arr1)); // Expected: [5, 6, 11, 12, 13]
