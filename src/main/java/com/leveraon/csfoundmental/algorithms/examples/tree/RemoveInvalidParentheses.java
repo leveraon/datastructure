@@ -13,7 +13,7 @@ import java.util.List;
  * "(a())()"] ")(" ->[""]
  */
 public class RemoveInvalidParentheses {
-    ArrayList<String> result = new ArrayList<String>();
+    ArrayList<String> result = new ArrayList<>();
     int max = 0;
 
     public List<String> removeInvalidParentheses(String s) {
