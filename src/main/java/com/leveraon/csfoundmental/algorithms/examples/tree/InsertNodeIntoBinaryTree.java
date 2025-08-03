@@ -34,7 +34,7 @@ public class InsertNodeIntoBinaryTree {
 
 			// Try to insert into the left child
 			if (current.getLeft() == null) {
-				current.setLeft(new Node<Integer>(val, null, null));
+				current.setLeft(new Node<>(val, null, null));
 				return root; // Insertion complete, return the modified root
 			} else {
 				// Left child exists, add it to the queue for further exploration
@@ -43,7 +43,7 @@ public class InsertNodeIntoBinaryTree {
 
 			// Try to insert into the right child
 			if (current.getRight() == null) {
-				current.setRight(new Node<Integer>(val, null, null));
+				current.setRight(new Node<>(val, null, null));
 				return root; // Insertion complete, return the modified root
 			} else {
 				// Right child exists, add it to the queue

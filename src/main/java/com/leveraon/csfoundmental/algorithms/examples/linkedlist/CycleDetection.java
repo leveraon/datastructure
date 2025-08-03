@@ -79,7 +79,7 @@ public class CycleDetection {
 		slow = head;
 		while (slow != fast) {
 			slow = slow.getRight();
-			fast = fast.getRight();
+//			fast = fast.getRight();
 		}
 
 		// Both pointers now point to the start of the cycle
@@ -104,10 +104,10 @@ public class CycleDetection {
 		System.out.println("-----------------------------\n");
 
 		// --- Test Case 2: Cycle (1 -> 2 -> 3 -> 4 -> 2) ---
-		Node<Integer> head2 = new Node<Integer>(1, null, null);
-		Node<Integer> node2 = new Node<Integer>(2, null, null);
-		Node<Integer> node3 = new Node<Integer>(3, null, null);
-		Node<Integer> node4 = new Node<Integer>(4, null, null);
+		Node<Integer> head2 = new Node<>(1, null, null);
+		Node<Integer> node2 = new Node<>(2, null, null);
+		Node<Integer> node3 = new Node<>(3, null, null);
+		Node<Integer> node4 = new Node<>(4, null, null);
 
 		head2.setRight(node2);
 		node2.setRight(node3);

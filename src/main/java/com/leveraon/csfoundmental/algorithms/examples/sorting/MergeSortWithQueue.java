@@ -33,8 +33,8 @@ public class MergeSortWithQueue {
 		if (size < 2)
 			return;
 
-		Queue<Integer> firstHalf = new LinkedQueue<Integer>();
-		Queue<Integer> secondHalf = new LinkedQueue<Integer>();
+		Queue<Integer> firstHalf = new LinkedQueue<>();
+		Queue<Integer> secondHalf = new LinkedQueue<>();
 
 		while (firstHalf.size() < size / 2) {
 			firstHalf.enqueue(queue.dequeue());

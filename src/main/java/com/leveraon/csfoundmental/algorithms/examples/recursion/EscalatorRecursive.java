@@ -11,8 +11,10 @@ public class EscalatorRecursive {
 			drawEscalator(n - 1);
 			for (int i = 0; i < n; i++) {
 				System.out.print("*");
+				if (i == n - 1) {
+					System.out.println('\n');
+				}
 			}
-			System.out.println('\n');
 		}
 	}
 
