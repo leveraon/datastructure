@@ -10,6 +10,22 @@ import com.leveraon.csfoundmental.datastructure.queues.Queue;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Best-Case Time Complexity: O(n log n)
+ * 
+ * Average-Case Time Complexity: O(n log n)
+ * 
+ * Worst-Case Time Complexity: O(n^2)
+ * 
+ * Space Complexity: O(log n) (due to recursion stack, average case) or O(n)
+ * (worst case for recursion stack, if not optimized with tail call optimization
+ * or iterative approach).
+ * 
+ * @author leveraon
+ *
+ *         Created on: Aug 3, 2025
+ */
+
 @Slf4j
 public class QuickSort {
 	/**
