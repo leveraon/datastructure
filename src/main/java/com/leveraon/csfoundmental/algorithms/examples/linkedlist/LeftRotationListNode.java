@@ -62,10 +62,10 @@ public class LeftRotationListNode {
 		if (arr == null || arr.length == 0) {
 			return null;
 		}
-		Node<Integer> head = new Node<Integer>(arr[0], null, null);
+		Node<Integer> head = new Node<>(arr[0], null, null);
 		Node<Integer> current = head;
 		for (int i = 1; i < arr.length; i++) {
-			current.setRight(new Node<Integer>(arr[i], null, null));
+			current.setRight(new Node<>(arr[i], null, null));
 			current = current.getRight();
 		}
 		return head;
