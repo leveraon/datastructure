@@ -28,7 +28,7 @@ public class BalancedBrackets {
 		bracketPairs.put(']', '[');
 		bracketPairs.put('}', '{');
 
-		Stack<Character> stack = new ArrayStack<Character>();
+		Stack<Character> stack = new ArrayStack<>();
 
 		for (char c : s.toCharArray()) {
 			// Case 1: If it's an opening bracket, push it onto the stack.

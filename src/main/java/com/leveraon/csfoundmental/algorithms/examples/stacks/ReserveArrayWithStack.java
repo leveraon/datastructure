@@ -19,7 +19,7 @@ public class ReserveArrayWithStack {
 		if (array == null || array.length <= 1) {
 			return array;
 		}
-		Stack<Integer> intStack = new ArrayStack<Integer>(array.length);
+		Stack<Integer> intStack = new ArrayStack<>(array.length);
 		for (int i = 0; i < array.length; i++) {
 			intStack.push(array[i]);
 		}

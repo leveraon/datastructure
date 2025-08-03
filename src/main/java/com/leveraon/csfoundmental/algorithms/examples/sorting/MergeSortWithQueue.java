@@ -36,6 +36,7 @@ import com.leveraon.csfoundmental.datastructure.queues.Queue;
  * recurrence relation (e.g., using the Master Theorem or expansion) yields
  * **O(n log n)**.
  * 
+ * </br>
  * ### Space Complexity
  * 
  * **Space Complexity:** **O(n)** (Auxiliary Space) Merge Sort requires an
@@ -45,23 +46,6 @@ import com.leveraon.csfoundmental.datastructure.queues.Queue;
  * array. The recursion stack depth is O(log n), but the dominant factor for
  * space complexity is the O(n) auxiliary array.
  * 
- * ### Summary Table
- * 
- * | Complexity Type | Best-Case | Average-Case | Worst-Case | | :--------------
- * | :-------- | :----------- | :--------- | | **Time** | O(n log n) | O(n log
- * n) | O(n log n) | | **Space** | O(n) | O(n) | O(n) | | (Auxiliary) | | | |
- * 
- * ### Key Characteristics
- * 
- * **Stable:** Yes, Merge Sort is a stable sorting algorithm, meaning that the
- * relative order of equal elements is preserved. **Not In-Place:** Standard
- * implementations require O(n) extra space, making it not an in-place sort.
- * (Though in-place merge sort algorithms exist, they are significantly more
- * complex and often have higher constant factors or worse practical
- * performance). **External Sorting:** It is well-suited for external sorting
- * (sorting data that does not fit entirely into memory) due to its linear-time
- * merging behavior. **Parallelizable:** The "divide" step makes it relatively
- * easy to parallelize.
  * 
  * @author leveraon
  *
