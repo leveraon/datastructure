@@ -1,9 +1,14 @@
 package com.leveraon.csfoundmental.algorithms.examples.sorting;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
+import com.leveraon.csfoundmental.algorithms.utils.RandomIntArrayGenerator;
+import com.leveraon.csfoundmental.datastructure.queues.ArrayQueue;
 import com.leveraon.csfoundmental.datastructure.queues.LinkedQueue;
 import com.leveraon.csfoundmental.datastructure.queues.Queue;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Merge Sort is a highly efficient, comparison-based sorting algorithm. Its
@@ -51,7 +56,7 @@ import com.leveraon.csfoundmental.datastructure.queues.Queue;
  *
  *         Created on: Aug 3, 2025
  */
-
+@Slf4j
 public class MergeSortWithQueue {
 
 	Queue<Integer> merge(Queue<Integer> q1, Queue<Integer> q2, Queue<Integer> queue, Comparator<Integer> comp) {
@@ -95,5 +100,27 @@ public class MergeSortWithQueue {
 		mergeSort(secondHalf, comp);
 		merge(firstHalf, secondHalf, queue, comp);
 
+	}
+
+	public static void main(String[] args) {
+		log.info("Merge sort using queue");
+		MergeSortWithQueue mergeSortQueue = new MergeSortWithQueue();
+		int[] array = RandomIntArrayGenerator.generateRandomIntArray(10, 3, 100);
+		Comparator<Integer> comp = new Comparator<>() {
+			public int compare(Integer o1, Integer o2) {
+				return o1 - o2 >= 0 ? 1 : -1;
+			}
+		};
+		Queue<Integer> queue = new ArrayQueue<>();
+		Arrays.stream(array).forEach(queue::enqueue);
+		System.out.println("Before -> " + Arrays.toString(array));
+		mergeSortQueue.mergeSort(queue, comp);
+		int[] sortedArray = new int[array.length];
+		int i = 0;
+		while (!queue.isEmpty()) {
+			sortedArray[i] = queue.dequeue();
+			i++;
+		}
+		System.out.println("After -> " + Arrays.toString(sortedArray));
 	}
 }
