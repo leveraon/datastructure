@@ -46,7 +46,7 @@ public class CalculateTreeHeight {
 		// Example 2: Single node tree
 		// 10
 		// Height should be 0
-		Node<Integer> root2 = new Node<Integer>(10, null, null);
+		Node<Integer> root2 = new Node<>(10, null, null);
 		System.out.println("Height of single node tree: " + sol.height(root2)); // Output: 0
 
 		// Example 3: Simple tree

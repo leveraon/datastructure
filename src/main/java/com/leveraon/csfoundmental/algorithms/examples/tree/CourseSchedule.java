@@ -45,7 +45,7 @@ public class CourseSchedule {
         }
 
         // store courses that have no prerequisites
-        LinkedList<Integer> queue = new LinkedList<Integer>();
+        LinkedList<Integer> queue = new LinkedList<>();
         for (int i = 0; i < numCourses; i++) {
             if (pCounter[i] == 0) {
                 queue.add(i);
@@ -88,12 +88,12 @@ public class CourseSchedule {
         int[] visit = new int[numCourses];
 
         // use the map to store what courses depend on a course
-        HashMap<Integer, ArrayList<Integer>> map = new HashMap<Integer, ArrayList<Integer>>();
+        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
         for (int[] a : prerequisites) {
             if (map.containsKey(a[1])) {
                 map.get(a[1]).add(a[0]);
             } else {
-                ArrayList<Integer> l = new ArrayList<Integer>();
+                ArrayList<Integer> l = new ArrayList<>();
                 l.add(a[0]);
                 map.put(a[1], l);
             }
