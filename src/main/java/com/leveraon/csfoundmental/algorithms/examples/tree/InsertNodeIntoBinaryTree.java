@@ -65,7 +65,7 @@ public class InsertNodeIntoBinaryTree {
 			return null;
 		}
 
-		Node<Integer> root = new Node<Integer>(values[0], null, null);
+		Node<Integer> root = new Node<>(values[0], null, null);
 		Queue<Node<Integer>> queue = new LinkedQueue<>();
 		queue.enqueue(root);
 		int i = 1;
@@ -75,7 +75,7 @@ public class InsertNodeIntoBinaryTree {
 
 			// Left child
 			if (values[i] != null) {
-				current.setLeft(new Node<Integer>(values[i], null, null));
+				current.setLeft(new Node<>(values[i], null, null));
 				;
 				queue.enqueue(current.getLeft());
 			}
@@ -83,7 +83,7 @@ public class InsertNodeIntoBinaryTree {
 
 			// Right child
 			if (i < values.length && values[i] != null) {
-				current.setRight(new Node<Integer>(values[i], null, null));
+				current.setRight(new Node<>(values[i], null, null));
 				queue.enqueue(current.getRight());
 			}
 			i++;
