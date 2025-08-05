@@ -4,7 +4,7 @@ import java.util.EmptyStackException;
 
 import com.leveraon.csfoundmental.datastructure.stacks.LinkedStack;
 
-public class TwoStacksQueue<T>  {
+public class QueueWithTwoStacks<T>  {
 	// Stack to handle incoming elements (for push operations)
 	private LinkedStack<T> inputStack = new LinkedStack<>();
 	// Stack to handle outgoing elements (for pop and peek operations)

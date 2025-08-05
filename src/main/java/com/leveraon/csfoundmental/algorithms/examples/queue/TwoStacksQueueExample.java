@@ -5,7 +5,7 @@ package com.leveraon.csfoundmental.algorithms.examples.queue;
 
 import java.util.EmptyStackException;
 
-import com.leveraon.csfoundmental.datastructure.queues.TwoStacksQueue;
+import com.leveraon.csfoundmental.datastructure.queues.QueueWithTwoStacks;
 
 /**
  * 
@@ -14,7 +14,7 @@ public class TwoStacksQueueExample<T> {
 
 	// --- Example Usage ---
 	public static void main(String[] args) {
-		TwoStacksQueue<Integer> queue = new TwoStacksQueue<>();
+		QueueWithTwoStacks<Integer> queue = new QueueWithTwoStacks<>();
 
 		System.out.println("Is queue empty? " + queue.empty()); // true
 
