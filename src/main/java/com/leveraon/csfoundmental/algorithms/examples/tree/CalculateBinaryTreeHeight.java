@@ -8,7 +8,7 @@ import com.leveraon.csfoundmental.datastructure.tree.Node;
 /**
  * 
  */
-public class CalculateTreeHeight {
+public class CalculateBinaryTreeHeight {
 	/**
 	 * Calculates the height of a binary tree. The height is the number of edges on
 	 * the longest path from the root to a leaf. An empty tree has a height of -1. A
@@ -37,7 +37,7 @@ public class CalculateTreeHeight {
 
 	// --- Example Usage (Main method) ---
 	public static void main(String[] args) {
-		CalculateTreeHeight sol = new CalculateTreeHeight();
+		CalculateBinaryTreeHeight sol = new CalculateBinaryTreeHeight();
 
 		// Example 1: Empty tree
 		// Height should be -1
