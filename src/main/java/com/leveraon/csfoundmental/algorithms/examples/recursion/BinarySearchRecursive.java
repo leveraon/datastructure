@@ -29,6 +29,7 @@ public class BinarySearchRecursive {
 
 	public static void main(String[] args) {
 		int[] array = { 1, 2, 4, 5, 8, 10, 12, 39, 49, 59, 67, 68, 70, 82, 99, 100 };
+		
 
 		int target = 88, target2 = 82;
 
