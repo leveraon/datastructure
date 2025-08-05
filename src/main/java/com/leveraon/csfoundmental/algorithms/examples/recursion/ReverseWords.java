@@ -17,29 +17,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class ReverseWords {
-    public static String reverseWords(char[] s) {
-        int i = 0;
-        for (int j = 0; j < s.length; j++) {
-            if (s[j] == ' ') {
-                reverse(s, i, j - 1);
-                i = j + 1;
-            }
-        }
-        reverse(s, i, s.length - 1);
-        reverse(s, 0, s.length - 1);
 
-        return new String(s);
-    }
-
-    public static void reverse(char[] s, int i, int j) {
-        while (i < j) {
-            char temp = s[i];
-            s[i] = s[j];
-            s[j] = temp;
-            i++;
-            j--;
-        }
-    }
 
     /** Reverses the contents of subarray data[low] through data[high] inclusive. */
     public static void reverseArray(int[] data, int low, int high) {
@@ -75,7 +53,7 @@ public class ReverseWords {
     public static void main(String[] args) {
         String words = "rolling in the deep";
         log.info("Original array:: {}", words);
-        log.info("Reversed array:: {}", reverseWords(words.toCharArray()));
+        log.info("Reversed array:: {}", reverseWords(words));
         log.info("Reversed array with queue:: {}", reverseWords(words));
     }
 }

@@ -1,8 +1,5 @@
 package com.leveraon.csfoundmental.algorithms.examples.recursion;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 public class EscalatorRecursive {
 
 	public static void drawEscalator(int n) {

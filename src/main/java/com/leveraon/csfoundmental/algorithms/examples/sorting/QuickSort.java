@@ -2,8 +2,6 @@ package com.leveraon.csfoundmental.algorithms.examples.sorting;
 
 import java.util.Arrays;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Best-Case Time Complexity: O(n log n)
  * 
@@ -20,7 +18,6 @@ import lombok.extern.slf4j.Slf4j;
  *         Created on: Aug 3, 2025
  */
 
-@Slf4j
 public class QuickSort {
 	 /**
      * Main method to perform QuickSort on an array.
