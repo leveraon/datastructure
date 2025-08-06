@@ -7,53 +7,54 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Given an input string, reverse the string word by word. A word is defined as
- * a sequence
- * of non-space characters.
- * The input string does not contain leading or trailing spaces and the words
- * are always
- * separated by a single space.
- * For example, Given s = "the sky is blue", return "blue is sky the".
- * Could you do it in-place without allocating extra space?
+ * a sequence of non-space characters. The input string does not contain leading
+ * or trailing spaces and the words are always separated by a single space. For
+ * example, Given s = "the sky is blue", return "blue is sky the". Could you do
+ * it in-place without allocating extra space?
  */
 @Slf4j
 public class ReverseWords {
 
+	/**
+	 * Reverses the contents of subarray data[low] through data[high] inclusive.
+	 * <br>
+	 * Time Complexity: O(n) <br>
+	 * Space Complexity: O(1)
+	 */
+	public static void reverseArray(int[] data, int low, int high) {
+		if (low < high) { // if at least two elements in subarray
+			int temp = data[low]; // swap data[low] and data[high]
+			data[low] = data[high];
+			data[high] = temp;
+			reverseArray(data, low + 1, high - 1); // recur on the rest
+		}
+	}
 
-    /** Reverses the contents of subarray data[low] through data[high] inclusive. */
-    public static void reverseArray(int[] data, int low, int high) {
-        if (low < high) { // if at least two elements in subarray
-            int temp = data[low]; // swap data[low] and data[high]
-            data[low] = data[high];
-            data[high] = temp;
-            reverseArray(data, low + 1, high - 1); // recur on the rest
-        }
-    }
+	public static String reverseWords(String words) {
+		Stack<String> stack = new LinkedStack<>();
+		if (words == null) {
+			return null;
+		}
+		String[] wordArray = words.split(" ");
+		for (String word : wordArray) {
+			stack.push(word);
+		}
 
-    public static String reverseWords(String words) {
-        Stack<String> stack = new LinkedStack<>();
-        if (words == null) {
-            return null;
-        }
-        String[] wordArray = words.split(" ");
-        for (String word : wordArray) {
-            stack.push(word);
-        }
+		StringBuilder sb = new StringBuilder();
+		while (!stack.isEmpty()) {
+			sb.append(stack.pop());
+			if (stack.size() > 0) {
+				sb.append(" ");
+			}
+		}
 
-        StringBuilder sb = new StringBuilder();
-        while (!stack.isEmpty()) {
-            sb.append(stack.pop());
-            if (stack.size() > 0) {
-                sb.append(" ");
-            }
-        }
+		return sb.toString();
+	}
 
-        return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        String words = "rolling in the deep";
-        log.info("Original array:: {}", words);
-        log.info("Reversed array:: {}", reverseWords(words));
-        log.info("Reversed array with queue:: {}", reverseWords(words));
-    }
+	public static void main(String[] args) {
+		String words = "rolling in the deep";
+		log.info("Original array:: {}", words);
+		log.info("Reversed array:: {}", reverseWords(words));
+		log.info("Reversed array with queue:: {}", reverseWords(words));
+	}
 }
