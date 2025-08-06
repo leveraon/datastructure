@@ -28,7 +28,7 @@ public class ArraySumRecursive {
 	}
 
 	public static void main(String[] args) {
-		int[] testArray = RandomIntArrayGenerator.generateRandomIntArray(10, 0, 50);
+		int[] testArray = RandomIntArrayGenerator.generateRandomIntArray(10, 2, 50);
 
 		log.info("Array is {}", testArray);
 
