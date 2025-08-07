@@ -12,6 +12,8 @@ import java.util.Map;
 import com.leveraon.csfoundmental.datastructure.queues.ArrayQueue;
 import com.leveraon.csfoundmental.datastructure.queues.CircularQueue;
 import com.leveraon.csfoundmental.datastructure.queues.Queue;
+import com.leveraon.csfoundmental.datastructure.stacks.ArrayStack;
+import com.leveraon.csfoundmental.datastructure.stacks.Stack;
 import com.leveraon.csfoundmental.datastructure.tree.Node;
 
 /**
@@ -419,6 +421,92 @@ public class Practise {
 		mergeSort(secondHalf, comp);
 
 		merge(firstHalf, secondHalf, queue, comp);
+
+	}
+
+	public boolean balancedBrackets(String[] array) {
+		Map<String, String> rules = new HashMap<>();
+		rules.put("}", "{");
+		rules.put("]", "[");
+		rules.put(")", "(");
+
+		Stack<String> stack = new ArrayStack<>();
+
+		for (String element : array) {
+			if (element.equals("{") || element.equals("[") || element.equals("(")) {
+				stack.push(element);
+			} else
+
+			if (element.equals("}") || element.equals("]") || element.equals(")")) {
+
+				if (stack.isEmpty()) {
+					return false;
+				}
+
+				String match = rules.get(element);
+				String top = stack.pop();
+				if (!match.equals(top)) {
+					return false;
+				}
+			}
+		}
+
+		return stack.isEmpty();
+	}
+
+	public int height(Node<Integer> tree) {
+		if (tree == null) {
+			return -1;
+		}
+
+		int leftHeight = height(tree.getLeft());
+		int rightHeight = height(tree.getRight());
+
+		return 1 + Math.max(leftHeight, rightHeight);
+	}
+
+	List<Integer> traversal = new ArrayList<>();
+
+	public void inorderTraversal(Node<Integer> node, List<Integer> traversal) {
+		if (node == null)
+			return;
+
+		traversal.add(node.getElement());
+
+		inorderTraversal(node.getLeft(), traversal);
+
+		inorderTraversal(node.getRight(), traversal);
+	}
+
+	public Node<Integer> insertNodeInBinaryTree(Node<Integer> root, int data) {
+		Node<Integer> newNode = new Node<>(data, null, null);
+
+		if (root == null) {
+			root = newNode;
+			return root;
+		}
+
+		Queue<Node<Integer>> queue = new ArrayQueue<Node<Integer>>();
+		queue.enqueue(newNode);
+
+		while (!queue.isEmpty()) {
+			Node<Integer> current = queue.dequeue();
+			if (current.getLeft() == null) {
+				current.setLeft(newNode);
+				return root;
+			} else {
+				queue.enqueue(current.getLeft());
+			}
+
+			if (current.getRight() == null) {
+				current.setRight(newNode);
+				return root;
+			} else {
+				queue.enqueue(current.getRight());
+			}
+		}
+
+		return root;
 
 	}
 
