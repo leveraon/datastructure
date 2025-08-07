@@ -4,11 +4,14 @@
 package com.leveraon.csfoundmental.algorithms.examples;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.leveraon.csfoundmental.datastructure.queues.ArrayQueue;
 import com.leveraon.csfoundmental.datastructure.queues.CircularQueue;
+import com.leveraon.csfoundmental.datastructure.queues.Queue;
 import com.leveraon.csfoundmental.datastructure.tree.Node;
 
 /**
@@ -41,39 +44,39 @@ public class Practise {
 		return result;
 	}
 
-//	Set visitied = new HashSet();
-//	List adjList = new ArrayList();
-//
-//	public <V> Set bfs(Graph<V> root) {
-//
-//		Queue<V> queue = new ArrayQueue();
-//		Set visited = new HashSet();
-//
-//		while (!queue.isEmpty()) {
-//			V current = queue.dequeue();
-//
-//			for (V neighbour : adjList.get(current)) {
-//				if (!visited.contains(neighbour)) {
-//					visited.add(neighbour);
-//					queue.enqueue(neighbour);
-//				}
-//			}
-//
-//		}
-//
-//		return visitied;
-//	}
+	// Set visitied = new HashSet();
+	// List adjList = new ArrayList();
+	//
+	// public <V> Set bfs(Graph<V> root) {
+	//
+	// Queue<V> queue = new ArrayQueue();
+	// Set visited = new HashSet();
+	//
+	// while (!queue.isEmpty()) {
+	// V current = queue.dequeue();
+	//
+	// for (V neighbour : adjList.get(current)) {
+	// if (!visited.contains(neighbour)) {
+	// visited.add(neighbour);
+	// queue.enqueue(neighbour);
+	// }
+	// }
+	//
+	// }
+	//
+	// return visitied;
+	// }
 
-//	public void dfs(Vertex vertex, Set visited) {
-//
-//		visited.add(vertex);
-//
-//		for (Vertex neighbour : adjList.get(vertex)) {
-//			if (!visited.contains(neighbour)) {
-//				dfs(neighbour, visited);
-//			}
-//		}
-//	}
+	// public void dfs(Vertex vertex, Set visited) {
+	//
+	// visited.add(vertex);
+	//
+	// for (Vertex neighbour : adjList.get(vertex)) {
+	// if (!visited.contains(neighbour)) {
+	// dfs(neighbour, visited);
+	// }
+	// }
+	// }
 
 	public boolean binarySearch(int[] array, int target) {
 		if (array == null || array.length == 0) {
@@ -357,6 +360,66 @@ public class Practise {
 			array[high] = temp;
 			reverseArrayRecursive(array, low + 1, high - 1);
 		}
+	}
+
+	public void insertSort(int[] array) {
+		if (array == null || array.length <= 1)
+			return;
+
+		int n = array.length;
+
+		for (int i = 1; i < n; i++) {
+			int pivot = array[i];
+			int j = n - i; // last element index
+			while (j >= 0 && array[j] > pivot) {
+				array[j + 1] = array[j];
+				j--;
+			}
+			array[j + 1] = pivot;
+		}
+
+	}
+
+	public void merge(Queue<Integer> s1, Queue<Integer> s2, Queue<Integer> queue, Comparator<Integer> comp) {
+
+		while (!s1.isEmpty() && !s2.isEmpty()) {
+			if (comp.compare(s1.first(), s2.first()) < 0) {
+				queue.enqueue(s1.dequeue());
+			} else {
+				queue.enqueue(s2.dequeue());
+			}
+		}
+
+		while (!s1.isEmpty()) {
+			queue.enqueue(s1.dequeue());
+		}
+		while (!s2.isEmpty()) {
+			queue.enqueue(s2.dequeue());
+		}
+	}
+
+	public void mergeSort(Queue<Integer> queue, Comparator<Integer> comp) {
+
+		int size = queue.size();
+		if (size < 2)
+			return;
+
+		Queue<Integer> firstHalf = new ArrayQueue<>();
+		Queue<Integer> secondHalf = new ArrayQueue<>();
+
+		while (firstHalf.size() < size / 2) {
+			firstHalf.enqueue(queue.dequeue());
+		}
+
+		while (!queue.isEmpty()) {
+			secondHalf.enqueue(queue.dequeue());
+		}
+
+		mergeSort(firstHalf, comp);
+		mergeSort(secondHalf, comp);
+
+		merge(firstHalf, secondHalf, queue, comp);
+
 	}
 
 }
