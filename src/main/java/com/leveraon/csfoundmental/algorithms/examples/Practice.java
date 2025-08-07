@@ -19,7 +19,7 @@ import com.leveraon.csfoundmental.datastructure.tree.Node;
 /**
  * 
  */
-public class Practise {
+public class Practice {
 	public List<Integer> leftRotation(List<Integer> array, int count) {
 
 		if (count == 0) {
