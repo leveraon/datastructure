@@ -364,23 +364,24 @@ public class Practice {
 		}
 	}
 
-	public void insertSort(int[] array) {
-		if (array == null || array.length <= 1)
-			return;
-
-		int n = array.length;
-
-		for (int i = 1; i < n; i++) {
-			int pivot = array[i];
-			int j = n - i; // last element index
-			while (j >= 0 && array[j] > pivot) {
-				array[j + 1] = array[j];
-				j--;
-			}
-			array[j + 1] = pivot;
-		}
-
-	}
+//	Wrong solution
+//	public void insertSort(int[] array) {
+//		if (array == null || array.length <= 1)
+//			return;
+//
+//		int n = array.length;
+//
+//		for (int i = 1; i < n; i++) {
+//			int pivot = array[i];
+//			int j = n - i; // last element index
+//			while (j >= 0 && array[j] > pivot) {
+//				array[j + 1] = array[j];
+//				j--;
+//			}
+//			array[j + 1] = pivot;
+//		}
+//
+//	}
 
 	public void merge(Queue<Integer> s1, Queue<Integer> s2, Queue<Integer> queue, Comparator<Integer> comp) {
 
