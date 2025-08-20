@@ -22,7 +22,15 @@ public class LRUCache<T> {
 	}
 
 	public void put(int i, T element) {
-
+		if (!cache.containsKey(i)) {
+			if (cache.size() >= capacity) {
+				removeTail();
+			}
+			this.addNewNode(element);
+		} else {
+			Node<T> node = cache.get(i);
+			this.moveToHead(node);
+		}
 	}
 
 	public T get(int i) {
@@ -30,11 +38,27 @@ public class LRUCache<T> {
 		if (node == null)
 			return null;
 
-		this.moveNodeToHead(node);
+		this.moveToHead(node);
 		return node.getElement();
 	}
 
-	void moveNodeToHead(Node<T> node) {
+	void addNewNode(T element) {
+		Node<T> newNode = new Node<>(element, null, null);
+		newNode.setRight(head);
+		head.setLeft(newNode);
+		head = newNode;
+		capacity++;
+	}
 
+	void moveToHead(Node<T> node) {
+		node.getLeft().setRight(node.getRight());
+		node.setRight(head);
+		head.setLeft(node);
+		head = node;
+	}
+
+	void removeTail() {
+		tail.setLeft(null);
+		capacity--;
 	}
 }
