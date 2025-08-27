@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leveraon.csfoundmental.algorithms.examples.tree;
+package com.leveraon.csfoundmental.algorithms.examples.graph;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import com.leveraon.csfoundmental.datastructure.graph.Graph;
 /**
  * 
  */
-public class TreeShortestPath {
+public class GraphShortestPath {
 	/**
 	 * Performs a Breadth-First Search from a start node to find a target node
 	 * and returns the shortest path if found.
@@ -139,7 +139,7 @@ public class TreeShortestPath {
 		graph.addVertex(11);
 		graph.addEdge(10, 11);
 
-		TreeShortestPath bfs = new TreeShortestPath();
+		GraphShortestPath bfs = new GraphShortestPath();
 
 		System.out.println("--- Test Case 1: Find path from 0 to 8 ---");
 		List<Integer> path1 = bfs.findShortestPath(graph, 0, 8);
