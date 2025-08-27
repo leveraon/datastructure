@@ -3,6 +3,7 @@ package com.leveraon.csfoundmental.algorithms.examples.tree;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -88,7 +89,7 @@ public class CourseSchedule {
         int[] visit = new int[numCourses];
 
         // use the map to store what courses depend on a course
-        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
+        Map<Integer, ArrayList<Integer>> map = new HashMap<>();
         for (int[] a : prerequisites) {
             if (map.containsKey(a[1])) {
                 map.get(a[1]).add(a[0]);
@@ -107,7 +108,7 @@ public class CourseSchedule {
         return true;
     }
 
-    private static boolean canFinishDFS(HashMap<Integer, ArrayList<Integer>> map, int[] visit, int i) {
+    private static boolean canFinishDFS(Map<Integer, ArrayList<Integer>> map, int[] visit, int i) {
         if (visit[i] == -1)
             return false;
         if (visit[i] == 1)
