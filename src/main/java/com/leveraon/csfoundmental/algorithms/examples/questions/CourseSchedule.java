@@ -9,45 +9,6 @@ import java.util.Queue;
 
 public class CourseSchedule {
 
-//	Map<Integer, Map<Integer, Integer>> courseSchedule = new HashMap<>();
-
-	// Wrong
-//	int[][] courseSchedule(int[] courses, int[][] prerequesites) {
-//		int[][] result = {};
-//		if (prerequesites == null || prerequesites.length == 0) {
-//			result[0] = courses;
-//			return result;
-//		}
-//
-//		for (int course : courses) {
-//			Map<Integer, Integer> prerequesitesMap = new HashMap<>();
-//			courseSchedule.put(course, prerequesitesMap);
-//			for (int[] prerequesite : prerequesites) {
-//
-//				int cour = prerequesite[0];
-//				int prer = prerequesite[1];
-//
-//				if (cour == course) {
-//					prerequesitesMap.put(prer, cour);
-//				}
-//
-//				// detect cycle
-//				if (prerequesitesMap.containsKey(prer)) {
-//					if (prerequesitesMap.get(prer) == cour) {
-//						courseSchedule.remove(course);
-//						break;
-//					} else {
-//						prerequesitesMap.put(prer, cour);
-//					}
-//
-//				}
-//
-//			}
-//		}
-//
-//		return result;
-//	}
-
 	/**
 	 * Finds a valid course order to take all courses, respecting prerequisites.
 	 * Uses Kahn's algorithm (BFS-based topological sort).
