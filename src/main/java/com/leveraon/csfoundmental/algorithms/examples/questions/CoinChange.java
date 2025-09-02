@@ -65,7 +65,7 @@ public class CoinChange {
 				}
 			}
 		}
-		System.out.println("dp table " + Arrays.toString(dp));
+//		System.out.println("dp table " + Arrays.toString(dp));
 
 		// After filling the dp table, dp[amount] will contain the minimum number of
 		// coins.
