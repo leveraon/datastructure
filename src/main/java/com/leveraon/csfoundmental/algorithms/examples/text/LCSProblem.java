@@ -24,7 +24,7 @@ public class LCSProblem {
 
 		int[][] lcs = LCS(test1.toCharArray(), test2.toCharArray());
 		for (int[] array : lcs) {
-			System.out.println("LCS of " + test1 + " and " + test2 + " is " + Arrays.toString(array));
+			System.out.println( Arrays.toString(array));
 		}
 	}
 
