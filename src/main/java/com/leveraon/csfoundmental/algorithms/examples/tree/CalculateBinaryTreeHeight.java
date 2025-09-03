@@ -3,7 +3,7 @@
  */
 package com.leveraon.csfoundmental.algorithms.examples.tree;
 
-import com.leveraon.csfoundmental.datastructure.tree.Node;
+import com.leveraon.csfoundmental.datastructure.tree.TreeNode;
 
 /**
  * 
@@ -17,7 +17,7 @@ public class CalculateBinaryTreeHeight {
 	 * @param root The root node of the binary tree.
 	 * @return The height of the binary tree.
 	 */
-	public int height(Node<Integer> root) {
+	public int height(TreeNode<Integer> root) {
 		// Base case: If the tree is empty (null node), its height is -1.
 		if (root == null) {
 			return -1;
@@ -46,7 +46,7 @@ public class CalculateBinaryTreeHeight {
 		// Example 2: Single node tree
 		// 10
 		// Height should be 0
-		Node<Integer> root2 = new Node<>(10, null, null);
+		TreeNode<Integer> root2 = new TreeNode<>(10, null, null);
 		System.out.println("Height of single node tree: " + sol.height(root2)); // Output: 0
 
 		// Example 3: Simple tree
@@ -54,9 +54,9 @@ public class CalculateBinaryTreeHeight {
 		// / \
 		// 20 30
 		// Height should be 1
-		Node<Integer> root3 = new Node<Integer>(10, null, null);
-		root3.setLeft(new Node<Integer>(20, null, null));
-		root3.setRight(new Node<Integer>(30, null, null));
+		TreeNode<Integer> root3 = new TreeNode<Integer>(10, null, null);
+		root3.setLeft(new TreeNode<Integer>(20, null, null));
+		root3.setRight(new TreeNode<Integer>(30, null, null));
 		System.out.println("Height of simple tree: " + sol.height(root3)); // Output: 1
 
 		// Example 4: Deeper left subtree
@@ -66,10 +66,10 @@ public class CalculateBinaryTreeHeight {
 		// /
 		// 40
 		// Height should be 2
-		Node<Integer> root4 = new Node<Integer>(10, null, null);
-		root4.setLeft(new Node<Integer>(20, null, null));
-		root4.setRight(new Node<Integer>(30, null, null));
-		root4.getLeft().setLeft(new Node<Integer>(40, null, null));
+		TreeNode<Integer> root4 = new TreeNode<Integer>(10, null, null);
+		root4.setLeft(new TreeNode<Integer>(20, null, null));
+		root4.setRight(new TreeNode<Integer>(30, null, null));
+		root4.getLeft().setLeft(new TreeNode<Integer>(40, null, null));
 		System.out.println("Height of deeper left subtree: " + sol.height(root4)); // Output: 2
 
 		// Example 5: Deeper right subtree
@@ -81,11 +81,11 @@ public class CalculateBinaryTreeHeight {
 		// \
 		// 50
 		// Height should be 3
-		Node<Integer> root5 = new Node<Integer>(10, null, null);
-		root5.setLeft(new Node<Integer>(20, null, null));
-		root5.setRight(new Node<Integer>(30, null, null));
-		root5.getRight().setRight(new Node<Integer>(40, null, null));
-		root5.getRight().getRight().setRight(new Node<Integer>(50, null, null));
+		TreeNode<Integer> root5 = new TreeNode<Integer>(10, null, null);
+		root5.setLeft(new TreeNode<Integer>(20, null, null));
+		root5.setRight(new TreeNode<Integer>(30, null, null));
+		root5.getRight().setRight(new TreeNode<Integer>(40, null, null));
+		root5.getRight().getRight().setRight(new TreeNode<Integer>(50, null, null));
 		System.out.println("Height of deeper right subtree: " + sol.height(root5)); // Output: 3
 	}
 }

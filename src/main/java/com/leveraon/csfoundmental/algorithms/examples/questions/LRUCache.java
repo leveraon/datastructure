@@ -17,8 +17,8 @@ public class LRUCache<T> {
 		cache = new HashMap<>();
 		head = new Node<T>(null, null, null);
 		tail = new Node<T>(null, null, null);
-		head.setRight(tail);
-		tail.setLeft(head);
+		head.setNext(tail);
+		tail.setPrev(head);
 	}
 
 	public void put(int i, T element) {
@@ -44,21 +44,21 @@ public class LRUCache<T> {
 
 	void addNewNode(T element) {
 		Node<T> newNode = new Node<>(element, null, null);
-		newNode.setRight(head);
-		head.setLeft(newNode);
+		newNode.setNext(head);
+		head.setPrev(newNode);
 		head = newNode;
 		capacity++;
 	}
 
 	void moveToHead(Node<T> node) {
-		node.getLeft().setRight(node.getRight());
-		node.setRight(head);
-		head.setLeft(node);
+		node.getPrev().setNext(node.getNext());
+		node.setNext(head);
+		head.setPrev(node);
 		head = node;
 	}
 
 	void removeTail() {
-		tail.setLeft(null);
+		tail.setPrev(null);
 		capacity--;
 	}
 }

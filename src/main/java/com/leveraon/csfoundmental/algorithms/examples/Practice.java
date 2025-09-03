@@ -150,9 +150,9 @@ public class Practice {
 		Node<Integer> slow = head;
 		Node<Integer> fast = head;
 
-		while (fast != null && fast.getRight() != null) {
-			slow = slow.getRight();
-			fast = fast.getRight().getRight();
+		while (fast != null && fast.getNext() != null) {
+			slow = slow.getNext();
+			fast = fast.getNext().getNext();
 			// check
 			if (slow == fast) {
 				return true;
@@ -174,15 +174,15 @@ public class Practice {
 		Node<Integer> current = head;
 		int index = 0;
 		while (current != null && index < position) {
-			current = current.getRight();
+			current = current.getNext();
 			index++;
 		}
 
 		if (current == null) {
 			throw new Exception("Index out of bound");
 		} else {
-			newNode.setRight(current.getRight());
-			current.setRight(newNode);
+			newNode.setNext(current.getNext());
+			current.setNext(newNode);
 		}
 
 	}
@@ -194,8 +194,8 @@ public class Practice {
 
 		int length = 1;
 		Node<Integer> current = head;
-		while (current.getRight() != null) {
-			current = current.getRight();
+		while (current.getNext() != null) {
+			current = current.getNext();
 			length++;
 		}
 
@@ -207,16 +207,16 @@ public class Practice {
 			return head;
 
 		// connect current with head, make a cycle
-		oldTail.setRight(head);
+		oldTail.setNext(head);
 
 		int count = 0;
 		Node<Integer> newTail = head;
 		while (count < effectiveRotation - 1) {
-			newTail = newTail.getRight();
+			newTail = newTail.getNext();
 			count++;
 		}
-		Node<Integer> newHead = newTail.getRight();
-		newTail.setRight(null);
+		Node<Integer> newHead = newTail.getNext();
+		newTail.setNext(null);
 		return newHead;
 	}
 
@@ -460,8 +460,8 @@ public class Practice {
 			return -1;
 		}
 
-		int leftHeight = height(tree.getLeft());
-		int rightHeight = height(tree.getRight());
+		int leftHeight = height(tree.getPrev());
+		int rightHeight = height(tree.getNext());
 
 		return 1 + Math.max(leftHeight, rightHeight);
 	}
@@ -474,9 +474,9 @@ public class Practice {
 
 		traversal.add(node.getElement());
 
-		inorderTraversal(node.getLeft(), traversal);
+		inorderTraversal(node.getPrev(), traversal);
 
-		inorderTraversal(node.getRight(), traversal);
+		inorderTraversal(node.getNext(), traversal);
 	}
 
 	public Node<Integer> insertNodeInBinaryTree(Node<Integer> root, int data) {
@@ -492,18 +492,18 @@ public class Practice {
 
 		while (!queue.isEmpty()) {
 			Node<Integer> current = queue.dequeue();
-			if (current.getLeft() == null) {
-				current.setLeft(newNode);
+			if (current.getPrev() == null) {
+				current.setPrev(newNode);
 				return root;
 			} else {
-				queue.enqueue(current.getLeft());
+				queue.enqueue(current.getPrev());
 			}
 
-			if (current.getRight() == null) {
-				current.setRight(newNode);
+			if (current.getNext() == null) {
+				current.setNext(newNode);
 				return root;
 			} else {
-				queue.enqueue(current.getRight());
+				queue.enqueue(current.getNext());
 			}
 		}
 

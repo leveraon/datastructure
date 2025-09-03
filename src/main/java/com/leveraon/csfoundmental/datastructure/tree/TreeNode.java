@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Node<E> {
+public class TreeNode<E> {
 	private E element;
-	private Node<E> prev;
-	private Node<E> next;
+	private TreeNode<E> left;
+	private TreeNode<E> right;
 }

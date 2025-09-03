@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.leveraon.csfoundmental.datastructure.stacks.ArrayStack;
 import com.leveraon.csfoundmental.datastructure.stacks.Stack;
-import com.leveraon.csfoundmental.datastructure.tree.Node;
+import com.leveraon.csfoundmental.datastructure.tree.TreeNode;
 
 /**
  * 
@@ -20,7 +20,7 @@ public class InorderTraversal {
 	 * @param root The root of the binary tree.
 	 * @return A list of integers representing the inorder traversal.
 	 */
-	public List<Integer> inorderTraversal(Node<Integer> root) {
+	public List<Integer> inorderTraversal(TreeNode<Integer> root) {
 		List<Integer> result = new ArrayList<>();
 		inorderHelper(root, result); // Call the recursive helper
 		return result;
@@ -32,7 +32,7 @@ public class InorderTraversal {
 	 * @param node   The current node being visited.
 	 * @param result The list to accumulate the traversal results.
 	 */
-	private void inorderHelper(Node<Integer> node, List<Integer> result) {
+	private void inorderHelper(TreeNode<Integer> node, List<Integer> result) {
 		// Base case: If the node is null, there's nothing to do.
 		if (node == null) {
 			return;
@@ -54,14 +54,14 @@ public class InorderTraversal {
 	 * @param root The root of the binary tree.
 	 * @return A list of integers representing the inorder traversal.
 	 */
-	public List<Integer> inorderTraversalIterative(Node<Integer> root) {
+	public List<Integer> inorderTraversalIterative(TreeNode<Integer> root) {
 		List<Integer> result = new ArrayList<>();
 		if (root == null) {
 			return result;
 		}
 
-		Stack<Node<Integer>> stack = new ArrayStack<>();
-		Node<Integer> currentNode = root; // Start from the root
+		Stack<TreeNode<Integer>> stack = new ArrayStack<>();
+		TreeNode<Integer> currentNode = root; // Start from the root
 
 		// Loop continues as long as there are nodes to process or nodes in the stack
 		while (currentNode != null || !stack.isEmpty()) {
@@ -93,11 +93,11 @@ public class InorderTraversal {
 		// 2 3
 		// / \
 		// 4 5
-		Node<Integer> root = new Node<>(1, null, null);
-		root.setLeft(new Node<>(2, null, null));
-		root.setRight(new Node<>(3, null, null));
-		root.getLeft().setLeft(new Node<>(4, null, null));
-		root.getLeft().setRight(new Node<>(5, null, null));
+		TreeNode<Integer> root = new TreeNode<>(1, null, null);
+		root.setLeft(new TreeNode<>(2, null, null));
+		root.setRight(new TreeNode<>(3, null, null));
+		root.getLeft().setLeft(new TreeNode<>(4, null, null));
+		root.getLeft().setRight(new TreeNode<>(5, null, null));
 
 		InorderTraversal solver = new InorderTraversal();
 

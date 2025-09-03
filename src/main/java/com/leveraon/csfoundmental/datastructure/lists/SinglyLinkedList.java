@@ -56,7 +56,7 @@ public class SinglyLinkedList<E> implements Cloneable {
 		if (isEmpty())
 			head = newest;
 		else
-			tail.setRight(newest);
+			tail.setNext(newest);
 		tail = newest;
 		size++;
 	}
@@ -65,7 +65,7 @@ public class SinglyLinkedList<E> implements Cloneable {
 		if (isEmpty())
 			return null;
 		E answer = head.getElement();
-		head = head.getRight();
+		head = head.getNext();
 		size--;
 		if (size == 0)
 			tail = null;
@@ -82,13 +82,13 @@ public class SinglyLinkedList<E> implements Cloneable {
 		SinglyLinkedList<E> other = (SinglyLinkedList<E>) super.clone(); // safe cast
 		if (size > 0) { // we need independent chain of nodes
 			other.head = new Node<>(head.getElement(), null, null);
-			Node<E> walk = head.getRight(); // walk through remainder of original list
+			Node<E> walk = head.getNext(); // walk through remainder of original list
 			Node<E> otherTail = other.head; // remember most recently created node
 			while (walk != null) { // make a new node storing same element
 				Node<E> newest = new Node<>(walk.getElement(), null, null);
-				otherTail.setRight(newest); // link previous node to this one
+				otherTail.setNext(newest); // link previous node to this one
 				otherTail = newest;
-				walk = walk.getRight();
+				walk = walk.getNext();
 			}
 		}
 		return other;

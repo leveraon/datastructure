@@ -5,7 +5,7 @@ package com.leveraon.csfoundmental.algorithms.examples.tree;
 
 import com.leveraon.csfoundmental.datastructure.queues.LinkedQueue;
 import com.leveraon.csfoundmental.datastructure.queues.Queue;
-import com.leveraon.csfoundmental.datastructure.tree.Node;
+import com.leveraon.csfoundmental.datastructure.tree.TreeNode;
 
 /**
  * 
@@ -19,22 +19,22 @@ public class InsertNodeIntoBinaryTree {
 	 * @param val  The value to insert.
 	 * @return The root of the modified binary tree.
 	 */
-	public Node<Integer> insertIntoNode(Node<Integer> root, int val) {
+	public TreeNode<Integer> insertIntoNode(TreeNode<Integer> root, int val) {
 		// Edge case: If the tree is empty, the new node becomes the root.
 		if (root == null) {
-			return new Node<Integer>(val, null, null);
+			return new TreeNode<Integer>(val, null, null);
 		}
 
-		Queue<Node<Integer>> queue = new LinkedQueue<>();
+		Queue<TreeNode<Integer>> queue = new LinkedQueue<>();
 		queue.enqueue(root); // Start BFS from the root
 
 		// Perform BFS to find the first available spot
 		while (!queue.isEmpty()) {
-			Node<Integer> current = queue.dequeue();
+			TreeNode<Integer> current = queue.dequeue();
 
 			// Try to insert into the left child
 			if (current.getLeft() == null) {
-				current.setLeft(new Node<>(val, null, null));
+				current.setLeft(new TreeNode<>(val, null, null));
 				return root; // Insertion complete, return the modified root
 			} else {
 				// Left child exists, add it to the queue for further exploration
@@ -43,7 +43,7 @@ public class InsertNodeIntoBinaryTree {
 
 			// Try to insert into the right child
 			if (current.getRight() == null) {
-				current.setRight(new Node<>(val, null, null));
+				current.setRight(new TreeNode<>(val, null, null));
 				return root; // Insertion complete, return the modified root
 			} else {
 				// Right child exists, add it to the queue
@@ -60,22 +60,22 @@ public class InsertNodeIntoBinaryTree {
 	// --- Helper methods for demonstration (optional) ---
 
 	// Method to build a sample tree from an array (level-order)
-	public Node<Integer> buildTree(Integer[] values) {
+	public TreeNode<Integer> buildTree(Integer[] values) {
 		if (values == null || values.length == 0 || values[0] == null) {
 			return null;
 		}
 
-		Node<Integer> root = new Node<>(values[0], null, null);
-		Queue<Node<Integer>> queue = new LinkedQueue<>();
+		TreeNode<Integer> root = new TreeNode<>(values[0], null, null);
+		Queue<TreeNode<Integer>> queue = new LinkedQueue<>();
 		queue.enqueue(root);
 		int i = 1;
 
 		while (!queue.isEmpty() && i < values.length) {
-			Node<Integer> current = queue.dequeue();
+			TreeNode<Integer> current = queue.dequeue();
 
 			// Left child
 			if (values[i] != null) {
-				current.setLeft(new Node<>(values[i], null, null));
+				current.setLeft(new TreeNode<>(values[i], null, null));
 				;
 				queue.enqueue(current.getLeft());
 			}
@@ -83,7 +83,7 @@ public class InsertNodeIntoBinaryTree {
 
 			// Right child
 			if (i < values.length && values[i] != null) {
-				current.setRight(new Node<>(values[i], null, null));
+				current.setRight(new TreeNode<>(values[i], null, null));
 				queue.enqueue(current.getRight());
 			}
 			i++;
@@ -92,13 +92,13 @@ public class InsertNodeIntoBinaryTree {
 	}
 
 	// Method to print tree level by level (for verification)
-	public void printTreeLevelOrder(Node<Integer> root) {
+	public void printTreeLevelOrder(TreeNode<Integer> root) {
 		if (root == null) {
 			System.out.println("Tree is empty.");
 			return;
 		}
 
-		Queue<Node<Integer>> queue = new LinkedQueue<>();
+		Queue<TreeNode<Integer>> queue = new LinkedQueue<>();
 		queue.enqueue(root);
 		int level = 0;
 
@@ -107,7 +107,7 @@ public class InsertNodeIntoBinaryTree {
 			int levelSize = queue.size();
 			System.out.print("Level " + level + ": ");
 			for (int i = 0; i < levelSize; i++) {
-				Node<Integer> current = queue.dequeue();
+				TreeNode<Integer> current = queue.dequeue();
 				if (current != null) {
 					System.out.print(current.getElement() + " ");
 					queue.enqueue(current.getLeft());
@@ -126,7 +126,7 @@ public class InsertNodeIntoBinaryTree {
 		InsertNodeIntoBinaryTree solution = new InsertNodeIntoBinaryTree();
 
 		// Test Case 1: Empty tree
-		Node<Integer> root1 = null;
+		TreeNode<Integer> root1 = null;
 		System.out.println("--- Test Case 1: Inserting into an empty tree ---");
 		root1 = solution.insertIntoNode(root1, 10);
 		solution.printTreeLevelOrder(root1); // Expected: Level 0: 10
@@ -138,7 +138,7 @@ public class InsertNodeIntoBinaryTree {
 		// / \
 		// 2 3
 		Integer[] initialValues2 = { 1, 2, 3 };
-		Node<Integer> root2 = solution.buildTree(initialValues2);
+		TreeNode<Integer> root2 = solution.buildTree(initialValues2);
 		System.out.println("--- Test Case 2: Inserting 4 into [1, 2, 3] ---");
 		System.out.println("Before insertion:");
 		solution.printTreeLevelOrder(root2);
@@ -158,7 +158,7 @@ public class InsertNodeIntoBinaryTree {
 		// / \ /
 		// 4 5 6
 		Integer[] initialValues3 = { 1, 2, 3, 4, 5, 6 };
-		Node<Integer> root3 = solution.buildTree(initialValues3);
+		TreeNode<Integer> root3 = solution.buildTree(initialValues3);
 		System.out.println("--- Test Case 3: Inserting 7 into [1, 2, 3, 4, 5, 6] ---");
 		System.out.println("Before insertion:");
 		solution.printTreeLevelOrder(root3);

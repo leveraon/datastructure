@@ -6,15 +6,15 @@ import com.leveraon.csfoundmental.datastructure.tree.Node;
 public class LeftRotationListNode {
 	public Node<Integer> rotateLeft(Node<Integer> head, int k) {
 		// 1. Handle Edge Cases
-		if (head == null || head.getRight() == null || k == 0) {
+		if (head == null || head.getNext() == null || k == 0) {
 			return head;
 		}
 
 		// 2. Find the length of the list and its last node (oldTail)
 		int length = 1;
 		Node<Integer> current = head;
-		while (current.getRight() != null) {
-			current = current.getRight();
+		while (current.getNext() != null) {
+			current = current.getNext();
 			length++;
 		}
 		Node<Integer> oldTail = current; // 'current' is now the last node
@@ -28,7 +28,7 @@ public class LeftRotationListNode {
 		}
 
 		// 4. Connect the oldTail to the head, making the list circular
-		oldTail.setRight(head);
+		oldTail.setNext(head);
 
 		// 5. Find the new tail:
 		// The new tail will be the node that was originally at (k)-th position
@@ -43,15 +43,15 @@ public class LeftRotationListNode {
 		// head.
 		Node<Integer> newTail = head;
 		for (int i = 0; i < k - 1; i++) {
-			newTail = newTail.getRight();
+			newTail = newTail.getNext();
 		}
 		// At this point, newTail is the k-th node from the original head.
 
 		// 6. The new head is the node right after the new tail.
-		Node<Integer> newHead = newTail.getRight();
+		Node<Integer> newHead = newTail.getNext();
 
 		// 7. Break the cycle: The new tail should now point to null.
-		newTail.setRight(null);
+		newTail.setNext(null);
 
 		// 8. Return the new head.
 		return newHead;
@@ -65,8 +65,8 @@ public class LeftRotationListNode {
 		Node<Integer> head = new Node<>(arr[0], null, null);
 		Node<Integer> current = head;
 		for (int i = 1; i < arr.length; i++) {
-			current.setRight(new Node<>(arr[i], null, null));
-			current = current.getRight();
+			current.setNext(new Node<>(arr[i], null, null));
+			current = current.getNext();
 		}
 		return head;
 	}
@@ -75,8 +75,8 @@ public class LeftRotationListNode {
 	public void printList(Node<Integer> head) {
 		Node<Integer> current = head;
 		while (current != null) {
-			System.out.print(current.getElement() + (current.getRight() != null ? " -> " : ""));
-			current = current.getRight();
+			System.out.print(current.getElement() + (current.getNext() != null ? " -> " : ""));
+			current = current.getNext();
 		}
 		System.out.println();
 	}

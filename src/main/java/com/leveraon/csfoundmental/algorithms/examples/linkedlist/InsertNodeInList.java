@@ -25,7 +25,7 @@ public class InsertNodeInList {
 
 		// 2. Handle Insertion at Head (position 0)
 		if (position == 0) {
-			newNode.setRight(head);// New node points to the old head
+			newNode.setNext(head);// New node points to the old head
 			return newNode; // New node becomes the new head
 		}
 
@@ -36,7 +36,7 @@ public class InsertNodeInList {
 		// Traverse to the node *before* the desired insertion point.
 		// For position 'k', we want to stop at node 'k-1'.
 		while (current != null && count < position - 1) {
-			current = current.getRight();
+			current = current.getNext();
 			count++;
 		}
 
@@ -56,9 +56,9 @@ public class InsertNodeInList {
 		// 5. Perform Insertion
 		// 'current' is now the node at (position - 1).
 		// Link the new node to the rest of the list
-		newNode.setRight(current.getRight());
+		newNode.setNext(current.getNext());
 		// Link the node at (position - 1) to the new node
-		current.setRight(newNode);
+		current.setNext(newNode);
 
 		return head; // The head of the list remains the same (unless position was 0)
 	}
@@ -68,7 +68,7 @@ public class InsertNodeInList {
 		Node<Integer> current = head;
 		while (current != null) {
 			System.out.print(current.getElement() + " -> ");
-			current = current.getRight();
+			current = current.getNext();
 		}
 		System.out.println("null");
 	}

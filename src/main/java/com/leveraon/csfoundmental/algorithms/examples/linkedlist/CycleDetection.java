@@ -18,7 +18,7 @@ public class CycleDetection {
 	 */
 	public boolean hasCycle(Node<Integer> head) {
 		// Edge cases: empty list or single node list cannot have a cycle
-		if (head == null || head.getRight() == null) {
+		if (head == null || head.getNext() == null) {
 			return false;
 		}
 
@@ -27,9 +27,9 @@ public class CycleDetection {
 
 		// Loop as long as fast and fast.next are not null
 		// This ensures fast doesn't go out of bounds on a non-cyclic list
-		while (fast != null && fast.getRight() != null) {
-			slow = slow.getRight(); // Move slow by one step
-			fast = fast.getRight().getRight(); // Move fast by two steps
+		while (fast != null && fast.getNext() != null) {
+			slow = slow.getNext(); // Move slow by one step
+			fast = fast.getNext().getNext(); // Move fast by two steps
 
 			// If they meet, a cycle is detected
 			if (slow == fast) {
@@ -50,7 +50,7 @@ public class CycleDetection {
 	 */
 	public Node<Integer> detectCycle(Node<Integer> head) {
 		// Edge cases: empty list or single node list cannot have a cycle
-		if (head == null || head.getRight() == null) {
+		if (head == null || head.getNext() == null) {
 			return null;
 		}
 
@@ -59,9 +59,9 @@ public class CycleDetection {
 		boolean cycleFound = false; // Flag to indicate if a cycle was found
 
 		// Phase 1: Detect the cycle
-		while (fast != null && fast.getRight() != null) {
-			slow = slow.getRight();
-			fast = fast.getRight().getRight();
+		while (fast != null && fast.getNext() != null) {
+			slow = slow.getNext();
+			fast = fast.getNext().getNext();
 
 			if (slow == fast) {
 				cycleFound = true;
@@ -78,8 +78,8 @@ public class CycleDetection {
 		// Reset slow to head, fast remains at meeting point
 		slow = head;
 		while (slow != fast) {
-			slow = slow.getRight();
-//			fast = fast.getRight();
+			slow = slow.getNext();
+//			fast = fast.getNext();
 		}
 
 		// Both pointers now point to the start of the cycle
@@ -92,9 +92,9 @@ public class CycleDetection {
 
 		// --- Test Case 1: No Cycle ---
 		Node<Integer> head1 = new Node<Integer>(1, null, null);
-		head1.setRight(new Node<Integer>(2, null, null));
-		head1.getRight().setRight(new Node<Integer>(32, null, null));
-		head1.getRight().getRight().setRight(new Node<Integer>(42, null, null));
+		head1.setNext(new Node<Integer>(2, null, null));
+		head1.getNext().setNext(new Node<Integer>(32, null, null));
+		head1.getNext().getNext().setNext(new Node<Integer>(42, null, null));
 
 		System.out.println("--- Test Case 1: No Cycle ---");
 		System.out.println("Has Cycle: " + detector.hasCycle(head1)); // Expected: false
@@ -109,10 +109,10 @@ public class CycleDetection {
 		Node<Integer> node3 = new Node<>(3, null, null);
 		Node<Integer> node4 = new Node<>(4, null, null);
 
-		head2.setRight(node2);
-		node2.setRight(node3);
-		node3.setRight(node4);
-		node4.setRight(node2); // Creates a cycle: 4 points back to 2
+		head2.setNext(node2);
+		node2.setNext(node3);
+		node3.setNext(node4);
+		node4.setNext(node2); // Creates a cycle: 4 points back to 2
 
 		System.out.println("--- Test Case 2: Cycle (4 -> 2) ---");
 		System.out.println("Has Cycle: " + detector.hasCycle(head2)); // Expected: true
@@ -123,8 +123,8 @@ public class CycleDetection {
 		// --- Test Case 3: Cycle at the head (1 -> 2 -> 1) ---
 		Node<Integer> head3 = new Node<Integer>(1, null, null);
 		Node<Integer> node_2_3 = new Node<Integer>(2, null, null);
-		head3.setRight(node_2_3);
-		node_2_3.setRight(head3); // Creates a cycle: 2 points back to 1
+		head3.setNext(node_2_3);
+		node_2_3.setNext(head3); // Creates a cycle: 2 points back to 1
 
 		System.out.println("--- Test Case 3: Cycle at head (2 -> 1) ---");
 		System.out.println("Has Cycle: " + detector.hasCycle(head3)); // Expected: true
