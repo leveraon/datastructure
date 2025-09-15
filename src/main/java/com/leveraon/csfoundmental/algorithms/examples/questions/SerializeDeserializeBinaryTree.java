@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import com.leveraon.csfoundmental.datastructure.tree.Node;
+import com.leveraon.csfoundmental.datastructure.tree.TreeNode;
 
 public class SerializeDeserializeBinaryTree<T> {
 
@@ -19,20 +19,20 @@ public class SerializeDeserializeBinaryTree<T> {
 	 * @param root The root of the binary tree.
 	 * @return A string representation of the tree.
 	 */
-	public String serialize(Node<Integer> root) {
+	public String serialize(TreeNode<Integer> root) {
 		StringBuilder sb = new StringBuilder();
 		dfsSerialize(root, sb);
 		return sb.toString();
 	}
 
-	private void dfsSerialize(Node<Integer> node, StringBuilder sb) {
+	private void dfsSerialize(TreeNode<Integer> node, StringBuilder sb) {
 		if (node == null) {
 			sb.append(NULL_NODE_MARKER).append(DELIMITER);
 			return;
 		}
 		sb.append(node.getElement()).append(DELIMITER);
-		dfsSerialize(node, sb);
-		dfsSerialize(node.getNext(), sb);
+		dfsSerialize(node.getLeft(), sb);
+		dfsSerialize(node.getRight(), sb);
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class SerializeDeserializeBinaryTree<T> {
 	 * @param data The serialized string of the tree.
 	 * @return The root of the reconstructed binary tree.
 	 */
-	public Node<Integer> deserialize(String data) {
+	public TreeNode<Integer> deserialize(String data) {
 		// Handle empty or invalid input string if necessary, though problem usually
 		// implies valid format.
 		if (data == null || data.isEmpty()) {
@@ -65,7 +65,7 @@ public class SerializeDeserializeBinaryTree<T> {
 		return dfsDeserialize(nodesQueue);
 	}
 
-	private Node<Integer> dfsDeserialize(Queue<String> nodesQueue) {
+	private TreeNode<Integer> dfsDeserialize(Queue<String> nodesQueue) {
 		// If the queue is empty, it means we've consumed all valid tokens unexpectedly
 		// or there was a malformed string. Based on serialization, this shouldn't
 		// happen
@@ -80,9 +80,9 @@ public class SerializeDeserializeBinaryTree<T> {
 			return null;
 		}
 
-		Node<Integer> node = new Node<>(Integer.parseInt(val), null, null);
-		node.setPrev(dfsDeserialize(nodesQueue));
-		node.setNext(dfsDeserialize(nodesQueue));
+		TreeNode<Integer> node = new TreeNode<>(Integer.parseInt(val), null, null);
+		node.setLeft(dfsDeserialize(nodesQueue));
+		node.setRight(dfsDeserialize(nodesQueue));
 
 		return node;
 	}
