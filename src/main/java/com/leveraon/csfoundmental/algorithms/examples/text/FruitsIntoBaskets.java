@@ -42,6 +42,7 @@ public class FruitsIntoBaskets {
 				windowStart++;
 			}
 			maxFruits = Math.max(maxFruits, windowEnd - windowStart + 1);
+			log.info("Map {}", mp);
 		}
 		log.info("Max fruits in baskets {}", maxFruits);
 		return mp;

@@ -2,6 +2,9 @@ package com.leveraon.csfoundmental.algorithms.examples.text;
 
 import java.util.Arrays;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class BruteForce {
 	/**
 	 * Returns the lowest index at which substring pattern begins in text (or else
@@ -24,7 +27,7 @@ public class BruteForce {
 		char[] text = { 'a', 'b', 'c', 'd', 'e', 'f', 'a', 'b', 'c', 'd', 'e' };
 		char[] pattern = { 'c', 'd', 'e' };
 
-		System.out.println("Text " + Arrays.toString(text) + " contains pattern " + Arrays.toString(pattern)
-				+ " at index of " + findBrute(text, pattern));
+		log.info("Text " + Arrays.toString(text) + " contains pattern " + Arrays.toString(pattern) + " at index of "
+				+ findBrute(text, pattern));
 	}
 }
