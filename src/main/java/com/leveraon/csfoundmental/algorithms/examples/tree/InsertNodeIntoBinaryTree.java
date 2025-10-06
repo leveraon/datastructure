@@ -76,7 +76,6 @@ public class InsertNodeIntoBinaryTree {
 			// Left child
 			if (values[i] != null) {
 				current.setLeft(new TreeNode<>(values[i], null, null));
-				;
 				queue.enqueue(current.getLeft());
 			}
 			i++;

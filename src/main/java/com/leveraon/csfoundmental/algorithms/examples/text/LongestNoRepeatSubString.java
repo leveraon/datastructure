@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
  * </p>
  */
 @Slf4j
-public class NoRepeatSubString {
+public class LongestNoRepeatSubString {
 
 	public Map<Character, Integer> lengthOfLongestSubstring(String s) {
 		int windowStart = 0;
@@ -40,7 +40,7 @@ public class NoRepeatSubString {
 	}
 
 	public static void main(String[] args) {
-		NoRepeatSubString nrs = new NoRepeatSubString();
+		LongestNoRepeatSubString nrs = new LongestNoRepeatSubString();
 
 		String test = "abcdabcaabcdeabcdabcdef";
 

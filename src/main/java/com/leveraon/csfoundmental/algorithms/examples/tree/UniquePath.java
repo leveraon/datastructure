@@ -60,7 +60,8 @@ public class UniquePath {
 
 	public static void main(String[] args) {
 		log.info("Unique path with DFS:: {}", uniquePathsDFS(8, 10));
-		log.info("Unique path with DP:: {}", uniquePathsDP(3, 3));
+		log.info("Unique path with DP::");
+		uniquePathsDP(8, 10);
 	}
 
 }
