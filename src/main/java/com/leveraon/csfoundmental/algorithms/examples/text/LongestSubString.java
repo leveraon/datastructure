@@ -33,7 +33,6 @@ public class LongestSubString {
 			mp.put(right, mp.getOrDefault(right, 0) + 1);
 
 			while (mp.size() > k) {
-				log.info("windowStart {}", windowStart);
 				char left = s.charAt(windowStart);
 				mp.put(left, mp.get(left) - 1);
 				if (mp.get(left) == 0) {
@@ -42,6 +41,7 @@ public class LongestSubString {
 				windowStart++;
 			}
 			maxLen = Math.max(maxLen, windowEnd - windowStart + 1);
+			log.info("current max sub string: {}", s.substring(windowStart, windowEnd));
 		}
 		return maxLen;
 	}
@@ -54,7 +54,7 @@ public class LongestSubString {
 
 		int length = lss.longestSubstringWithKDistinctChars(test, k);
 
-		log.info("Max substring length is {}", length);
+		log.info("Max substring length is: {}", length);
 	}
 
 }
