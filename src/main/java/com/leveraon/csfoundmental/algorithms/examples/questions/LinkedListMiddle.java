@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples.linkedlist;
+package com.leveraon.csfoundmental.algorithms.examples.questions;
 
 import com.leveraon.csfoundmental.datastructure.tree.Node;
 
