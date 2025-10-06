@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
  * 
  */
 @Slf4j
-public class LongestSubString {
+public class LongestKthDistinctSubString {
 
 	public int longestSubstringWithKDistinctChars(String s, int k) {
 
@@ -47,7 +47,7 @@ public class LongestSubString {
 	}
 
 	public static void main(String[] args) {
-		LongestSubString lss = new LongestSubString();
+		LongestKthDistinctSubString lss = new LongestKthDistinctSubString();
 
 		String test = "aaadddbbddccccc";
 		int k = 3;

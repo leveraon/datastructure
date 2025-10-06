@@ -2,11 +2,11 @@ package com.leveraon.csfoundmental.algorithms.examples.text;
 
 import java.util.Arrays;
 
-public class LCSProblem {
+public class LongestCommonSubString {
 	/**
 	 * Returns table such that L[j][k] is length of LCS for X[0..j−1] and Y[0..k−1].
 	 */
-	public static int[][] LCS(char[] X, char[] Y) {
+	public static int[][] longestCommonSubstring(char[] X, char[] Y) {
 		int n = X.length;
 		int m = Y.length;
 		int[][] L = new int[n + 1][m + 1];
@@ -22,7 +22,7 @@ public class LCSProblem {
 	public static void main(String[] args) {
 		String test1 = "helloworldexperience", test2 = "workingexperience";
 
-		int[][] lcs = LCS(test1.toCharArray(), test2.toCharArray());
+		int[][] lcs = longestCommonSubstring(test1.toCharArray(), test2.toCharArray());
 		for (int[] array : lcs) {
 			System.out.println( Arrays.toString(array));
 		}
