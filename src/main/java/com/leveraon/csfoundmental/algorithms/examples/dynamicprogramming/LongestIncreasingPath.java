@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples.questions;
+package com.leveraon.csfoundmental.algorithms.examples.dynamicprogramming;
 
 public class LongestIncreasingPath {
 	// Member variables to be used by the DFS helper method

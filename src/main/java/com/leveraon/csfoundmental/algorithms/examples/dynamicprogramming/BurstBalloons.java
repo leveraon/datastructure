@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples.questions;
+package com.leveraon.csfoundmental.algorithms.examples.dynamicprogramming;
 
 public class BurstBalloons {
 	public int maxCoins(int[] nums) {

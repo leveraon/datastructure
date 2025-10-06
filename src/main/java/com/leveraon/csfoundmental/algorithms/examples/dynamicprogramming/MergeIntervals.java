@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples.questions;
+package com.leveraon.csfoundmental.algorithms.examples.dynamicprogramming;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.leveraon.csfoundmental.algorithms.examples.questions;
+package com.leveraon.csfoundmental.algorithms.examples.dynamicprogramming;
 
 public class ScrambleStrings {
 	private String s1_global; // Stores s1 to avoid passing it repeatedly
