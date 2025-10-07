@@ -66,4 +66,32 @@ public class BurstBalloons {
 		// balloons.
 		return dp[0][n + 1];
 	}
+
+	public int maxCoinsOptimal(int[] balloons) {
+		// Add padding
+		int n = balloons.length;
+		int[] values = new int[n + 2];
+		values[0] = values[n + 1] = 1;
+		System.arraycopy(balloons, 0, values, 1, n);
+
+		// Create DP table
+		int[][] maxCoins = new int[n + 2][n + 2];
+
+		// For each window size
+		for (int windowSize = 1; windowSize <= n; windowSize++) {
+			// For each starting position
+			for (int left = 1; left <= n - windowSize + 1; left++) {
+				int right = left + windowSize - 1;
+
+				// Try each balloon as the last to burst
+				for (int last = left; last <= right; last++) {
+					int coins = values[left - 1] * values[last] * values[right + 1];
+					coins += maxCoins[left][last - 1] + maxCoins[last + 1][right];
+					maxCoins[left][right] = Math.max(maxCoins[left][right], coins);
+				}
+			}
+		}
+
+		return maxCoins[1][n];
+	}
 }
